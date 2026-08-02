@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="robots" content="noindex" />
+  <title>Content Manager — Read James Wolfe</title>
+</head>
+<body>
+
+  <!-- Decap CMS core (the admin UI itself).
+       Auth is handled by DecapBridge (see admin/config.yml's backend
+       block), not Netlify — Netlify deprecated Identity and Git Gateway
+       in Feb 2025, so that approach no longer works for new sites. -->
+  <script src="https://unpkg.com/decap-cms@^3.8.3/dist/decap-cms.js"></script>
+
+  <script>
+    // Registers a custom "Scripture Quote" block for the Articles rich
+    // text editor. Authors fill in a reference + verse text through a
+    // small form (no markdown syntax to remember), and it's stored in
+    // the article body as:
+    //   :::scripture REFERENCE
+    //   verse text
+    //   :::
+    // which app.js recognizes and renders with the site's scripture
+    // callout styling.
+    CMS.registerEditorComponent({
+      id: "scripture",
+      label: "Scripture Quote",
+      fields: [
+        { name: "reference", label: "Reference (e.g. John 3:16)", widget: "string" },
+        { name: "body", label: "Verse Text", widget: "text" }
+      ],
+      pattern: /^:::scripture\s+([^\n]+)\n([\s\S]*?):::$/,
+      fromBlock: function (match) {
+        return {
+          reference: match[1].trim(),
+          body: match[2].trim()
+        };
+      },
+      toBlock: function (obj) {
+        return ":::scripture " + obj.reference + "\n" + obj.body + "\n:::";
+      },
+      toPreview: function (obj) {
+        return (
+          '<blockquote style="border-left:3px solid #7A8662;padding:12px 18px;' +
+          'background:rgba(122,134,98,0.08);font-style:italic;">' +
+          obj.body +
+          '<br/><strong style="font-style:normal;">' +
+          obj.reference +
+          "</strong></blockquote>"
+        );
+      }
+    });
+  </script>
+
+</body>
+</html>
