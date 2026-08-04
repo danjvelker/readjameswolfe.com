@@ -16,7 +16,7 @@ backend:
 # Better Decap + Bridge logo (optional)
 logo_url: https://decapbridge.com/decapcms-with-bridge.svg
 # Add site links in Decap CMS (optional)
-site_url: https://readjameswolfe.netlify.app
+site_url: https://readjameswolfe.com
 
 # Where images uploaded through the CMS get saved in the repo, and the
 # URL path used to reference them on the live site.
