@@ -2,64 +2,17 @@
   "about": {
     "title": "About James Wolfe",
     "photo": null,
-    "body": "James writes on grace, patience, and the ordinary shape of the Christian life. He lives with his family and is currently working on his first book.\n\n## Mission\n\nThis site exists to help weary Christians find comfort and confidence in Christ \u2014 through writing that takes the ordinary, undramatic parts of faith seriously.\n\n## Currently\n\nWriting weekly, working on a first book, and slowly building out a public archive of quotations that have shaped his thinking."
+    "body": "James writes on grace, patience, and the ordinary shape of the Christian life. He lives a quiet life in the Midwest, publishes on Substack twice a month, and is currently working on a variety of fiction and nonfiction projects. He is usually cooking something interesting, and dreaming about sticks that might be swords.\n\n## Mission\n\nWriting to help weary Christians find comfort and confidence in Christ.\n\n## Currently\n\nWriting daily, publishing on Substack biweekly, and building a collection of quotations to encourage believers in their faith."
   },
   "articles": [
     {
-      "slug": "on-the-patience-of-god",
-      "title": "On the Patience of God",
-      "image": "img-1",
-      "excerpt": "There is a particular kind of shame that visits us not when we fail, but when we fail again \u2014 the same sin, the same excuse, the same quiet apology whispered for the hundredth time. I used to think God's patience had a bottom. I am learning, slowly, that it does not.",
-      "date": "2026-07-28",
-      "clicks": 412,
-      "body": "There is a particular kind of shame that visits us not when we fail, but when we fail again \u2014 the same sin, the same excuse, the same quiet apology whispered for the hundredth time. I used to think God's patience had a bottom. I am learning, slowly, that it does not.\n\nWe tend to imagine patience as a kind of reluctant tolerance \u2014 a parent counting silently to ten, a teacher exhaling before the fifteenth interruption. But that isn't quite what Scripture means when it describes the patience of God. His patience is not gritted teeth. It is settled purpose.\n\n:::scripture 2 Peter 3:9\nThe Lord is not slow to fulfill his promise as some count slowness, but is patient toward you, not wishing that any should perish, but that all should reach repentance.\n:::\n\nNotice what the patience is *for*. It isn't aimless forbearance. It is aimed at repentance \u2014 at bringing us, unhurried but unrelenting, to the place where we finally stop running. That distinction matters more than it first appears. A patience with no direction is just delay. A patience with a purpose is closer to love holding its ground.\n\n## The Danger of Presuming on It\n\nPaul warns the Romans about a subtler danger than despair \u2014 the danger of presuming on God's kindness as though it were indifference.\n\n:::scripture Romans 2:4\nOr do you presume on the riches of his kindness and forbearance and patience, not knowing that God's kindness is meant to lead you to repentance?\n:::\n\nI have been on both sides of this. There are seasons where I have treated God's patience as a locked door I was too ashamed to knock on, and seasons where I have treated it as a door that would simply never close, no matter how long I stayed away. Both are a misreading. His patience is neither a wall nor a blank check. It is an invitation, open for exactly as long as he decides \u2014 which, mercifully, has so far always been long enough.\n\nI don't know how to end an article like this except plainly: if you are waiting to feel worthy of coming back before you come back, you have the order backward. The patience is not the reward for arriving. It is the reason you're able to.",
-      "tags": [
-        "Patience",
-        "Grace"
-      ],
-      "publishToHomepage": true
-    },
-    {
-      "slug": "the-ordinary-tuesday",
-      "title": "The Ordinary Tuesday",
-      "image": "img-3",
-      "excerpt": "Most of my sanctification has not happened on mountaintops. It has happened in the dishes, in the traffic, in the eleventh phone call from a friend in crisis when I had nothing left to give. I am starting to suspect that this \u2014 the unremarkable middle of the week \u2014 is where most of the Christian life actually takes place.",
-      "date": "2026-07-14",
-      "clicks": 356,
-      "body": "Most of my sanctification has not happened on mountaintops. It has happened in the dishes, in the traffic, in the eleventh phone call from a friend in crisis when I had nothing left to give. I am starting to suspect that this \u2014 the unremarkable middle of the week \u2014 is where most of the Christian life actually takes place.\n\n*(Full article coming soon.)*",
-      "tags": [
-        "Sanctification",
-        "Daily Life"
-      ],
-      "publishToHomepage": true
-    },
-    {
-      "slug": "what-the-psalms-taught-me-about-complaint",
-      "title": "What the Psalms Taught Me About Complaint",
-      "image": "img-4",
-      "excerpt": "For years I thought lament was a failure of faith \u2014 a crack in the foundation that a stronger Christian wouldn't need. Then I read the Psalms honestly for the first time and realized how much of Israel's worship was, quite plainly, complaint addressed to God rather than about him.",
-      "date": "2026-07-03",
-      "clicks": 521,
-      "body": "For years I thought lament was a failure of faith \u2014 a crack in the foundation that a stronger Christian wouldn't need. Then I read the Psalms honestly for the first time and realized how much of Israel's worship was, quite plainly, complaint addressed to God rather than about him.\n\n*(Full article coming soon.)*",
-      "tags": [
-        "Prayer",
-        "Scripture"
-      ],
-      "publishToHomepage": true
-    },
-    {
-      "slug": "a-slower-kind-of-faithfulness",
-      "title": "A Slower Kind of Faithfulness",
-      "image": "img-2",
-      "excerpt": "We have built a culture that rewards the dramatic testimony and quietly ignores the fifty-year marriage, the unremarkable deacon, the Sunday school teacher nobody wrote a book about. I want to make a case for the long, undramatic obedience that most of us are actually called to.",
-      "date": "2026-06-18",
-      "clicks": 289,
-      "body": "We have built a culture that rewards the dramatic testimony and quietly ignores the fifty-year marriage, the unremarkable deacon, the Sunday school teacher nobody wrote a book about. I want to make a case for the long, undramatic obedience that most of us are actually called to.\n\n*(Full article coming soon.)*",
-      "tags": [
-        "Faithfulness",
-        "Daily Life"
-      ],
-      "publishToHomepage": false
+      "publishToHomepage": true,
+      "clicks": 0,
+      "title": "When Jesus Turned 29",
+      "slug": "whenjesusturned29",
+      "image": "/assets/uploads/david_roberts_-_convent_of_the_terra_santa_nazareth_april_21st_1839_plate_30_from_volume_i_of_th_-_-meisterdrucke-69594-.jpg",
+      "excerpt": "Here’s the good news: Jesus brings us a radically better hope than anything you or I could possibly imagine. How? Well, I am now twenty nine; and once upon a time, Jesus was also twenty nine.\n\nAnd when God was my age, he had to wait.",
+      "body": "Oh, I am *so* ready for my life to get going.\n\nYesterday, I turned twenty nine years old. I certainly don’t look or feel “almost thirty,” and part of me still anxiously looks over my shoulder anytime I’m out in public, half-expecting my old school principal to come up and say, *“I’m really sorry, we all made a terrible mistake letting you out there. You’re not really an adult at all. How on earth did you make it this far without anyone catching on?”*\n\nBut aside from debilitating levels of impostor syndrome and the ever-encroaching anxiety over my absconding sense of youth (my older friends are welcome to chortle at this one), there’s all kinds of waiting I have to navigate. For the last two years, I’ve felt like I’m just waiting for my life to get moving. And oh, how I hate the waiting. Even the healthiest theology will be challenged by the prospect of an unexpected wait.\n\nRight now, I am…\n\n* waiting for my career to kick off\n* waiting to find a spouse and family\n* waiting for guidance and direction\n* waiting to finally feel like a real man\n* waiting for my life to feel purposeful or meaningful in any way, like even a little bit.\n\nAnd so I wait. What other choice do I have? I wait, and despair looms. I wait, and my waiting casts a shadow of claws and fangs. And as I wait, the waiting gnaws away at me, tearing little bite sized pieces of me away. I am feasted upon by my waiting.\n\nYou see, waiting often brings with it a little parasite. The medical term in the Latin is *invidia*, but most of us know it better by its common name: *envy*. Sometimes it crawls up into my mind, and at other times it clings to my heart; but most of the time it coils deep in my stomach, churning and devouring the good gifts of God, turning them into a poison brewed by impatience and frustration.\n\nEnvy is a filter — a negative one — that takes good things and transmutes them into waste. It takes ordinary waiting and turns it into a frustrated sense of lack. Envy always says, “I need more than what I have.” It only ever looks out, it is always starving, and though you could give it all the world, everything would never be enough.\n\nEnvy lies. *“This time of waiting you’re in? It means God has given up on you. Everyone else has the life that you want; you’re the only one who has to wait for your dreams. And you’re waiting for nothing, anyways. Those stupid dreams will always be out of reach. You’re stuck — hopelessly stuck — and you’re never, ever getting out.”*\n\nSound familiar?\n\nBut here’s the good news: **Jesus brings us a radically better hope than anything you or I could possibly imagine.** How? Well, I am now twenty nine; and once upon a time, Jesus was also twenty nine.\n\nAnd when God was my age, he had to wait.\n\n* When Jesus was 29, the radiance of the glory of God worked in a rural carpentry shop doing menial tasks, waiting for his ministry to begin.\n* When Jesus was 29, he who would conquer the tyranny of death through the power of his own blood would wait and watch his earthly father die.\n* When Jesus was 29, he who would one day sit forever at the right hand of the throne of the Father, enthroned in glory — at whose feet would angels fall and sing in unceasing chorus, “Holy, holy, holy is the Lord God Almighty, who was, and is, and is to come,” and, “Worthy are you, our Lord and God, to receive glory and honor and power, for you created all things, and by your will they existed and were created” — that guy didn’t do a single thing history thought worth recording.\n* In fact, at 29 Jesus didn’t seem to be doing much at all.\n* He was just… waiting.\n\nHe waited quietly, spending decades in total obscurity and seeming irrelevance, waiting for the Father’s time to be made right. And that waiting was, to an almighty, sovereign God, apparently very, very good.\n\n:::scripture Lamentations 3:25-26\n“The Lord is good to those who wait for him, to the soul who seeks him. It is good that one should wait quietly for the salvation of the Lord.”\n:::\n\nOur God is Lord of all who are waiting. And he is so, so good.\n\nWhat a comfort to know that Jesus waited too! What more proof do we need that our waiting isn’t a waste? If our Savior chose not to rush through his periods of drought and doldrums, but waited and submitted himself to the Father’s will, then why should we be any different? Why should we let envy and impatience steal our joy in this moment, now — in waiting?\n\nBiblical history is primarily a description of people who wait. Israel waited while in the bondage of slavery, displaced in the desert, lost in exile, and through 400 years of painful silence. Every prophet, patriarch, priest and king was someone who waited. Every account in scripture that has inspired you has almost certainly involved a painful period of protracted waiting. So, too, is the Christian’s life marked by our waiting, as we must all of us ultimately wait for Christ to return. “To be Christian,” as Mark Vroegop says, “is to wait.”\n\n:::scripture Psalm 130:5-6\n“I wait for the Lord, my soul waits, and in his word I hope; my soul waits for the Lord more than watchmen for the morning, more than watchmen for the morning.”\n:::\n\nSo no, your waiting is not a waste. It is good that you are waiting right now. It is good that I am waiting right now. The Lord is good to you and to me and to everyone who waits in hope on the word of his promise. Yes, Christian, he is unbelievably good to you. Even in your waiting.\n\nSo now I am twenty nine, and I am still waiting to see what will come of my life. But rather than waiting anxiously, wracked with envy and frustration, I can wait joyfully, filled with a durable, secure hope that God will not fail to complete the good work he has begun in me. And I can run this race with endurance, setting aside every weight and sin that clings so closely, looking to Jesus, the author and perfecter of my faith — the same Jesus who was twenty nine once, and also had to wait for his life to get started.\n\nYou were able to be saved because Jesus waited. He waited in perfect obedience, not rushing ahead into his own desire, but resting in the knowledge that the Father’s time is always best. And that act of waiting was redeemed into the greatest glory that history has ever known.\n\nWhat do you think God can do with your waiting?"
     }
   ],
   "quotes": [
