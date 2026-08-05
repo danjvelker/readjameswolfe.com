@@ -1,0 +1,12 @@
+RewriteEngine On
+
+# Clean article URLs: readjameswolfe.com/some-article-slug
+# quietly serves article-template.html?slug=some-article-slug behind the
+# scenes, without changing what's shown in the browser's address bar.
+# Only kicks in when nothing else already matches that path — real files
+# and folders (index.html, about.html, admin/, content/, assets/, etc.)
+# are left completely alone.
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteCond %{REQUEST_URI} !^/(admin|assets|content|scripts)
+RewriteRule ^([a-zA-Z0-9-]+)/?$ /article-template.html?slug=$1 [L,QSA]

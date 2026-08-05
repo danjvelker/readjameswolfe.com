@@ -155,3 +155,89 @@ history you can look back through.
   them safely means custom plugin code I can't verify without being able
   to run it. Flagging this as a good candidate for a focused follow-up
   if you'd like it.
+
+---
+
+# Moving to Traditional (cPanel) Hosting
+
+The steps above get the site running on Netlify, which is genuine
+production hosting, not a testing platform — but if you'd rather run
+this on your own traditional hosting (e.g. EthernetServers or similar
+cPanel-based hosting), here's how, while keeping the CMS publish
+workflow intact.
+
+**Before buying a plan**, confirm with the host's support that your plan
+includes **SSH access** and that **cPanel's Git Version Control feature**
+works on it. Not all shared hosting tiers include this by default.
+
+## Two other things this move requires (not yet done)
+
+- **Point your domain at the new server.** Once you have your
+  EthernetServers account, they'll give you either an IP address or
+  nameservers. In Cloudflare's DNS settings for your domain, add an
+  **A record** pointing to that IP (simplest), or switch to their
+  nameservers if they require it. This is a manual step I can't
+  pre-configure since it depends on your actual server details.
+- **Enable SSL.** Most cPanel hosts include free auto-SSL (via Let's
+  Encrypt) — look for **SSL/TLS Status** or **AutoSSL** in cPanel and run
+  it once your domain is pointing at the server. Without this your site
+  loads over `http://` instead of `https://`, which browsers flag as
+  "not secure."
+- Already included: `content/.htaccess`, which tells Apache/LiteSpeed
+  never to cache `content/site-content.json` — the Apache equivalent of
+  a setting `netlify.toml` handled automatically on Netlify. Without it,
+  visitors' browsers could keep showing stale content after you publish
+  a change. Nothing to configure here, it's already in the files.
+
+## How this works
+
+Decap CMS keeps publishing to GitHub exactly as it does now — nothing
+about DecapBridge or `admin/config.yml` changes. The only new part is
+telling your cPanel server to pull the latest content from GitHub and
+copy it live. This repo already includes a `.cpanel.yml` file that
+defines exactly what to copy — you just need to point cPanel at the
+repo once.
+
+## One-time setup
+
+1. **Enable SSH access** in cPanel (Security → SSH Access), if it isn't
+   already on.
+2. **Generate an SSH key pair** in cPanel (same SSH Access page usually
+   has a "Manage SSH Keys" option), and **add the public key as a
+   deploy key** on your GitHub repo (GitHub repo → Settings → Deploy
+   keys → Add deploy key — read-only access is enough).
+3. In cPanel, open **Git Version Control** → **Create**.
+   - Enable **Clone a Repository**.
+   - **Clone URL**: `git@github.com:danjvelker/readjameswolfe.com.git`
+   - **Repository Path**: something *outside* `public_html`, e.g.
+     `/home/your-cpanel-username/repos/readjameswolfe` (keeping the git
+     repo out of your public web folder is safer and keeps `.git`
+     internals from being publicly accessible).
+   - Click **Create**.
+4. Open `.cpanel.yml` in your repo (already included) and make sure the
+   `CPANEL_USERNAME` placeholder in it matches your actual cPanel
+   username — edit it via GitHub if needed, or ask me and I'll update it
+   for you if you tell me your username.
+
+## Every time you want to push a change live
+
+After publishing something in the CMS (`/admin` on whichever URL you're
+using — this doesn't change):
+
+1. Log into cPanel → **Git Version Control** → open your repository.
+2. Click **Pull or Deploy** tab.
+3. Click **Update from Remote** (pulls the latest commit from GitHub).
+4. Click **Deploy HEAD Commit** (copies the files into `public_html`,
+   using the `.cpanel.yml` instructions).
+
+That's the full loop — not instant like Netlify, but a simple ~30-second
+manual step whenever you're ready to go live with new content.
+
+## Upgrading to fully automatic later
+
+If the manual click ever becomes annoying, the path forward is a GitHub
+webhook that triggers steps 3–4 automatically the moment DecapBridge
+publishes — the `.cpanel.yml` deploy task you already have in place
+works for that too, so nothing here needs to be redone, just the
+trigger added on top. Ask me when you're ready for that and we'll set
+it up together.

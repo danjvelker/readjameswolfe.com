@@ -18,8 +18,6 @@ logo_url: https://decapbridge.com/decapcms-with-bridge.svg
 # Add site links in Decap CMS (optional)
 site_url: https://readjameswolfe.com
 
-# Where images uploaded through the CMS get saved in the repo, and the
-# URL path used to reference them on the live site.
 media_folder: "assets/uploads"
 public_folder: "/assets/uploads"
 
@@ -30,7 +28,7 @@ collections:
     label: "Site Content"
     files:
       - file: "content/site-content.json"
-        label: "Articles, Quotes & About"
+        label: "Articles, Authors, Quote Gallery & About"
         name: "site"
         fields:
 
@@ -46,6 +44,16 @@ collections:
                 widget: "markdown"
                 buttons: ["bold", "italic", "link", "heading-two", "heading-three", "quote", "bulleted-list", "numbered-list"]
 
+          - label: "Authors"
+            name: "authors"
+            widget: "list"
+            summary: "{{name}}"
+            hint: "Everyone who writes for the site, including guest writers. Add a new entry here before assigning a guest as an article's author below."
+            fields:
+              - { label: "Name", name: "name", widget: "string", hint: "Type this exactly the same way when assigning an article's author below — it's how the two get matched up." }
+              - { label: "Bio", name: "bio", widget: "text" }
+              - { label: "Photo (optional)", name: "photo", widget: "image", required: false }
+
           - label: "Articles"
             name: "articles"
             widget: "list"
@@ -55,25 +63,30 @@ collections:
               - label: "Slug"
                 name: "slug"
                 widget: "string"
-                hint: "Used in the article's web address. Lowercase, words separated by hyphens, no spaces — e.g. on-the-patience-of-god"
+                hint: "Used in the article's web address, e.g. readjameswolfe.com/this-part. Lowercase, words separated by hyphens, no spaces."
               - { label: "Header Image", name: "image", widget: "image", hint: "Every article should have one — shown at the top of the article and in feed previews." }
               - { label: "Excerpt", name: "excerpt", widget: "text", hint: "A short preview shown in the homepage feed and articles archive (2-3 sentences)." }
-              - { label: "Date", name: "date", widget: "date", format: "YYYY-MM-DD" }
+              - label: "Date"
+                name: "date"
+                widget: "datetime"
+                date_format: "YYYY-MM-DD"
+                time_format: false
+                hint: "Just pick the date — there's no time-of-day component."
+              - label: "Author"
+                name: "author"
+                widget: "string"
+                default: "James Wolfe"
+                hint: "Must match a name from the Authors list above exactly."
               - label: "Tags"
                 name: "tags"
                 widget: "list"
-                hint: "Used for filtering on the Articles page. Add as many as you like."
+                field: { label: "Tag", name: "tag", widget: "string" }
+                hint: "Click 'Add' below to add each tag separately. Used for filtering on the Articles page."
               - label: "Show in Homepage Feed"
                 name: "publishToHomepage"
                 widget: "boolean"
                 default: true
                 hint: "On = appears in the homepage feed. Off = still visible on the Articles page, just not the homepage."
-              - label: "Clicks"
-                name: "clicks"
-                widget: "number"
-                default: 0
-                value_type: "int"
-                hint: "Powers the sidebar's Trending list. Leave at 0 for new articles — real click tracking is a future upgrade."
               - label: "Body"
                 name: "body"
                 widget: "markdown"
@@ -92,29 +105,9 @@ collections:
                 editor_components: ["scripture"]
                 hint: "Use the quote-mark button for a normal block quote, or the Scripture Quote block (in the '+' menu) for styled Bible references. Switch to the pencil icon for raw markdown mode to add a horizontal rule (type --- on its own line)."
 
-          - label: "Quotes"
-            name: "quotes"
+          - label: "Daily Quote Gallery"
+            name: "dailyQuoteGallery"
             widget: "list"
-            summary: "{{author}}"
-            fields:
-              - label: "ID"
-                name: "id"
-                widget: "string"
-                hint: "Unique, no spaces — e.g. q11"
-              - { label: "Quote Text", name: "text", widget: "text" }
-              - { label: "Author", name: "author", widget: "string" }
-              - label: "Tags"
-                name: "tags"
-                widget: "list"
-                hint: "Used for filtering on the Quotes page."
-              - { label: "Quote Image (optional)", name: "image", widget: "image", required: false }
-              - { label: "Date", name: "date", widget: "date", format: "YYYY-MM-DD" }
-              - label: "Show in Homepage Feed"
-                name: "publishToHomepage"
-                widget: "boolean"
-                default: false
-              - label: "Clicks"
-                name: "clicks"
-                widget: "number"
-                default: 0
-                value_type: "int"
+            summary: "{{fields.image}}"
+            hint: "Upload quote graphics here. The sidebar shows one at random on each visit, with a button visitors can click to see the whole gallery."
+            field: { label: "Image", name: "image", widget: "image" }

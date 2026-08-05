@@ -2,8 +2,6 @@
 // Read James Wolfe — site JS
 // Fetches content/site-content.json (the file Decap CMS edits directly)
 // and renders whichever page elements are present in the DOM.
-// No build step, no framework — content updates the moment the JSON
-// file changes, whether edited by hand or published through the CMS.
 // ============================================
 
 const CONTENT_URL = "content/site-content.json";
@@ -27,6 +25,14 @@ function renderMarkdown(md) {
   return window.marked.parse(withScripture);
 }
 
+// Tags from the CMS's list widget normally come back as plain strings,
+// but this normalizes defensively in case any entry is an object shape
+// instead (e.g. { tag: "Grace" }), so filtering never silently breaks.
+function normalizeTags(tags) {
+  if (!Array.isArray(tags)) return [];
+  return tags.map((t) => (typeof t === "string" ? t : t.tag || t.value || Object.values(t)[0] || "")).filter(Boolean);
+}
+
 // Article header images can be either a real uploaded file (from the CMS,
 // e.g. "assets/uploads/photo.jpg") or one of the built-in gradient
 // placeholder classes (img-1..img-4) used by the original dummy content.
@@ -39,93 +45,161 @@ function articleImageMarkup(image, className) {
   return `<div class="${cls} ${image || "img-1"}"></div>`;
 }
 
-function quoteVisual(item, extraClass) {
-  const cls = extraClass ? ` ${extraClass}` : "";
-  const placeholderHtml = `<div class="quote-img-placeholder${cls}" style="display:none;"><span>&ldquo;${item.text}&rdquo;</span></div>`;
+// Gets the current article's slug from either ?slug= (old-style links,
+// still supported) or the URL path itself (clean URLs via .htaccess,
+// e.g. /this-part) — the browser only ever sees the clean path, so the
+// query string is empty even though Apache rewrote it internally.
+function getSlugFromUrl() {
+  const params = new URLSearchParams(window.location.search);
+  const fromQuery = params.get("slug");
+  if (fromQuery) return fromQuery;
 
-  if (!item.image) {
-    return `<div class="quote-img-placeholder${cls}"><span>&ldquo;${item.text}&rdquo;</span></div>`;
-  }
-
-  return `
-    <div class="quote-visual">
-      <img src="${item.image}" alt="Quote: &ldquo;${item.text}&rdquo; — ${item.author}" class="quote-photo${cls}"
-        onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
-      ${placeholderHtml}
-    </div>
-  `;
+  const path = window.location.pathname.replace(/^\/+|\/+$/g, "");
+  const knownPages = ["", "index.html", "about.html", "articles.html", "article-template.html", "admin"];
+  if (path && !knownPages.includes(path)) return path;
+  return null;
 }
 
 function buildFeedItems(content) {
-  const homepageArticles = content.articles
+  return content.articles
     .filter((a) => a.publishToHomepage)
     .map((a) => ({
       ...a,
       type: "article",
-      href: `article-template.html?slug=${a.slug}`
-    }));
-  const homepageQuotes = content.quotes
-    .filter((q) => q.publishToHomepage)
-    .map((q) => ({
-      ...q,
-      type: "quote",
-      href: `quote-template.html?id=${q.id}`
-    }));
-  return [...homepageArticles, ...homepageQuotes].sort((a, b) => new Date(b.date) - new Date(a.date));
+      href: `/${a.slug}`
+    }))
+    .sort((a, b) => new Date(b.date) - new Date(a.date));
 }
+
+// ------------ Daily Quote Gallery (sidebar widget + modal) ------------
 
 function renderDailyQuote(content) {
   const el = document.getElementById("daily-quote");
-  if (!el || !content.quotes.length) return;
-  const pick = content.quotes[Math.floor(Math.random() * content.quotes.length)];
-  el.innerHTML = `<a href="quote-template.html?id=${pick.id}">${quoteVisual(pick)}</a>`;
+  const gallery = content.dailyQuoteGallery || [];
+  if (!el || !gallery.length) return;
+
+  const pick = gallery[Math.floor(Math.random() * gallery.length)];
+  el.innerHTML = `
+    <button type="button" class="daily-quote-img-btn" id="daily-quote-open">
+      <img src="${pick}" alt="Quote graphic" class="quote-photo"
+        onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+      <div class="quote-img-placeholder" style="display:none;"><span>Quote image</span></div>
+    </button>
+  `;
+
+  const openBtn = document.getElementById("daily-quote-open");
+  if (openBtn) openBtn.addEventListener("click", () => openGalleryModal(gallery));
 }
 
-function renderTrending(feedItems) {
+function wireGalleryButton(content) {
+  const btn = document.getElementById("view-gallery-btn");
+  if (!btn) return;
+  const gallery = content.dailyQuoteGallery || [];
+  btn.addEventListener("click", () => openGalleryModal(gallery));
+  if (!gallery.length) btn.disabled = true;
+}
+
+function openGalleryModal(images) {
+  const existing = document.getElementById("quote-gallery-modal");
+  if (existing) existing.remove();
+
+  const modal = document.createElement("div");
+  modal.id = "quote-gallery-modal";
+  modal.className = "gallery-modal";
+  modal.setAttribute("role", "dialog");
+  modal.setAttribute("aria-label", "Quote gallery");
+
+  const grid = images
+    .map(
+      (src) => `
+      <img src="${src}" alt="Quote graphic" class="gallery-modal-img"
+        onerror="this.style.display='none';">
+    `
+    )
+    .join("");
+
+  modal.innerHTML = `
+    <div class="gallery-modal-inner">
+      <button type="button" class="gallery-modal-close" aria-label="Close gallery">&times;</button>
+      <div class="gallery-modal-grid">${grid || "<p>No quote images uploaded yet.</p>"}</div>
+    </div>
+  `;
+
+  document.body.appendChild(modal);
+  document.body.style.overflow = "hidden";
+
+  function close() {
+    modal.remove();
+    document.body.style.overflow = "";
+  }
+
+  modal.querySelector(".gallery-modal-close").addEventListener("click", close);
+  modal.addEventListener("click", (e) => {
+    if (e.target === modal) close();
+  });
+  document.addEventListener("keydown", function escHandler(e) {
+    if (e.key === "Escape") {
+      close();
+      document.removeEventListener("keydown", escHandler);
+    }
+  });
+}
+
+// ------------ Trending (real click counts, separate from CMS content) ------------
+
+async function fetchClickCounts() {
+  try {
+    const res = await fetch("content/click-counts.json", { cache: "no-store" });
+    if (!res.ok) return {};
+    return await res.json();
+  } catch {
+    return {};
+  }
+}
+
+async function renderTrending(feedItems) {
   const list = document.getElementById("trending-list");
   if (!list) return;
-  const topThree = [...feedItems].sort((a, b) => (b.clicks || 0) - (a.clicks || 0)).slice(0, 3);
-  list.innerHTML = topThree
-    .map((item) => {
-      const label = item.type === "quote" ? item.text : item.title;
-      return `<li><a href="${item.href}">${label}</a></li>`;
-    })
-    .join("");
+
+  const counts = await fetchClickCounts();
+  const withCounts = feedItems.map((item) => ({ ...item, clicks: counts[item.slug] || 0 }));
+  const topThree = withCounts.sort((a, b) => b.clicks - a.clicks).slice(0, 3);
+
+  if (!topThree.some((item) => item.clicks > 0)) {
+    list.innerHTML = `<li class="trending-empty">No reader activity tracked yet — check back once a few visits come in.</li>`;
+    return;
+  }
+
+  list.innerHTML = topThree.map((item) => `<li><a href="${item.href}">${item.title}</a></li>`).join("");
 }
+
+// Fires a background click-tracking request when an article page loads.
+// Fails silently if the tracking script isn't reachable (e.g. local
+// testing without PHP) — trending simply shows no data in that case.
+function recordClick(slug) {
+  fetch(`/track-click.php?slug=${encodeURIComponent(slug)}`).catch(() => {});
+}
+
+// ------------ Feed / Articles archive ------------
 
 function renderFeed(feedItems) {
   const feed = document.getElementById("feed");
   if (!feed) return;
 
   feed.innerHTML = feedItems
-    .map((item) => {
-      if (item.type === "quote") {
-        const tags = (item.tags || []).map((t) => `<li>${t}</li>`).join("");
-        return `
-          <a class="card card-quote" href="${item.href}">
-            ${quoteVisual(item)}
-            <div class="card-body">
-              <span class="card-type">Quote</span>
-              <p class="card-title">&ldquo;${item.text}&rdquo;</p>
-              <p class="card-author">— ${item.author}</p>
-              <ul class="card-tags">${tags}</ul>
-              <p class="card-meta">${formatDate(item.date)}</p>
-            </div>
-          </a>
-        `;
-      }
-      return `
-        <a class="card" href="${item.href}">
-          ${articleImageMarkup(item.image)}
-          <div class="card-body">
-            <span class="card-type">Article</span>
-            <h2 class="card-title">${item.title}</h2>
-            <p class="card-excerpt">${item.excerpt}</p>
-            <p class="card-meta">${formatDate(item.date)}</p>
-          </div>
-        </a>
-      `;
-    })
+    .map(
+      (item) => `
+      <a class="card" href="${item.href}">
+        ${articleImageMarkup(item.image)}
+        <div class="card-body">
+          <span class="card-type">Article</span>
+          <h2 class="card-title">${item.title}</h2>
+          <p class="card-excerpt">${item.excerpt}</p>
+          <p class="card-meta">${formatDate(item.date)}</p>
+        </div>
+      </a>
+    `
+    )
     .join("");
 }
 
@@ -137,18 +211,18 @@ function renderArticlesOnly(content) {
   const emptyState = document.getElementById("articles-empty");
   const articles = [...content.articles].sort((a, b) => new Date(b.date) - new Date(a.date));
 
-  const allTags = [...new Set(articles.flatMap((a) => a.tags || []))].sort();
+  const allTags = [...new Set(articles.flatMap((a) => normalizeTags(a.tags)))].sort();
   let activeTag = "All";
 
   function cardHtml(a) {
     return `
-      <a class="card" href="article-template.html?slug=${a.slug}">
+      <a class="card" href="/${a.slug}">
         ${articleImageMarkup(a.image)}
         <div class="card-body">
           <span class="card-type">Article</span>
           <h2 class="card-title">${a.title}</h2>
           <p class="card-excerpt">${a.excerpt}</p>
-          <ul class="card-tags">${(a.tags || []).map((t) => `<li>${t}</li>`).join("")}</ul>
+          <ul class="card-tags">${normalizeTags(a.tags).map((t) => `<li>${t}</li>`).join("")}</ul>
           <p class="card-meta">${formatDate(a.date)}</p>
         </div>
       </a>
@@ -156,7 +230,7 @@ function renderArticlesOnly(content) {
   }
 
   function renderGrid() {
-    const filtered = activeTag === "All" ? articles : articles.filter((a) => (a.tags || []).includes(activeTag));
+    const filtered = activeTag === "All" ? articles : articles.filter((a) => normalizeTags(a.tags).includes(activeTag));
     if (emptyState) emptyState.hidden = filtered.length !== 0;
     grid.innerHTML = filtered.map(cardHtml).join("");
   }
@@ -177,12 +251,13 @@ function renderArticlesOnly(content) {
   renderGrid();
 }
 
+// ------------ Article page ------------
+
 function renderArticlePage(content) {
   const container = document.getElementById("article-detail");
   if (!container) return;
 
-  const params = new URLSearchParams(window.location.search);
-  const slug = params.get("slug");
+  const slug = getSlugFromUrl();
   const article = content.articles.find((a) => a.slug === slug) || content.articles[0];
   if (!article) return;
 
@@ -193,24 +268,27 @@ function renderArticlePage(content) {
   const wordCount = (article.body || "").trim().split(/\s+/).filter(Boolean).length;
   const minutes = Math.max(1, Math.round(wordCount / 225));
 
+  const author = (content.authors || []).find((a) => a.name === article.author) || {
+    name: article.author || "James Wolfe",
+    bio: "",
+    photo: null
+  };
+  const authorPhotoStyle = author.photo ? ` style="background-image:url('${author.photo}')"` : "";
+
   container.innerHTML = `
     <header class="article-header">
       <span class="card-type">Article</span>
       <h1 class="article-title">${article.title}</h1>
-      <p class="article-meta">${formatDate(article.date)} &nbsp;&middot;&nbsp; ${minutes} min read</p>
+      <p class="article-meta">By ${author.name} &nbsp;&middot;&nbsp; ${formatDate(article.date)} &nbsp;&middot;&nbsp; ${minutes} min read</p>
     </header>
     ${articleImageMarkup(article.image, "article-hero")}
     <div class="article-body">${bodyHtml}</div>
     <section class="author-card">
-      <div class="author-photo" aria-hidden="true"></div>
+      <div class="author-photo" aria-hidden="true"${authorPhotoStyle}></div>
       <div class="author-card-body">
-        <h2 class="author-card-name">James Wolfe</h2>
-        <p class="author-card-bio">
-          James writes on grace, patience, and the ordinary shape of the
-          Christian life. He lives with his family and is currently working
-          on his first book.
-        </p>
-        <a href="about.html" class="author-card-link">More about James →</a>
+        <h2 class="author-card-name">${author.name}</h2>
+        <p class="author-card-bio">${author.bio || ""}</p>
+        <a href="/about.html" class="author-card-link">More about the site →</a>
       </div>
     </section>
   `;
@@ -221,7 +299,7 @@ function renderArticlePage(content) {
     relatedGrid.innerHTML = related
       .map(
         (a) => `
-        <a class="related-card" href="article-template.html?slug=${a.slug}">
+        <a class="related-card" href="/${a.slug}">
           ${articleImageMarkup(a.image, "related-card-image")}
           <div class="related-card-body">
             <p class="related-card-title">${a.title}</p>
@@ -231,103 +309,11 @@ function renderArticlePage(content) {
       )
       .join("");
   }
+
+  recordClick(article.slug);
 }
 
-function renderQuoteArchive(content) {
-  const grid = document.getElementById("archive-grid");
-  if (!grid) return;
-
-  const tagBar = document.getElementById("tag-filters");
-  const authorSelect = document.getElementById("author-filter");
-  const emptyState = document.getElementById("archive-empty");
-  const quotes = content.quotes;
-
-  const allTags = [...new Set(quotes.flatMap((q) => q.tags))].sort();
-  const allAuthors = [...new Set(quotes.map((q) => q.author))].sort();
-
-  let activeTag = "All";
-
-  tagBar.innerHTML = ["All", ...allTags]
-    .map((tag) => `<button type="button" class="tag-pill${tag === "All" ? " active" : ""}" data-tag="${tag}">${tag}</button>`)
-    .join("");
-
-  authorSelect.innerHTML =
-    `<option value="All">All Authors</option>` + allAuthors.map((a) => `<option value="${a}">${a}</option>`).join("");
-
-  function renderGrid() {
-    const author = authorSelect.value;
-    const filtered = quotes.filter((q) => {
-      const tagMatch = activeTag === "All" || q.tags.includes(activeTag);
-      const authorMatch = author === "All" || q.author === author;
-      return tagMatch && authorMatch;
-    });
-
-    emptyState.hidden = filtered.length !== 0;
-
-    grid.innerHTML = filtered
-      .map(
-        (q) => `
-        <a class="quote-tile" href="quote-template.html?id=${q.id}">
-          ${quoteVisual(q)}
-          <div class="quote-tile-body">
-            <p class="quote-tile-author">${q.author}</p>
-            <ul class="card-tags">${q.tags.map((t) => `<li>${t}</li>`).join("")}</ul>
-          </div>
-        </a>
-      `
-      )
-      .join("");
-  }
-
-  tagBar.addEventListener("click", (e) => {
-    const btn = e.target.closest(".tag-pill");
-    if (!btn) return;
-    activeTag = btn.dataset.tag;
-    tagBar.querySelectorAll(".tag-pill").forEach((el) => el.classList.toggle("active", el === btn));
-    renderGrid();
-  });
-  authorSelect.addEventListener("change", renderGrid);
-
-  renderGrid();
-}
-
-function renderQuotePage(content) {
-  const container = document.getElementById("quote-detail");
-  if (!container) return;
-
-  const params = new URLSearchParams(window.location.search);
-  const id = params.get("id");
-  const quote = content.quotes.find((q) => q.id === id) || content.quotes[0];
-
-  container.innerHTML = `
-    <div class="quote-detail-image">${quoteVisual(quote)}</div>
-    <div class="quote-detail-body">
-      <p class="quote-detail-text">&ldquo;${quote.text}&rdquo;</p>
-      <p class="quote-detail-author">— ${quote.author}</p>
-      <ul class="card-tags">${quote.tags.map((t) => `<li>${t}</li>`).join("")}</ul>
-    </div>
-  `;
-  document.title = `${quote.author} — Read James Wolfe`;
-
-  const moreGrid = document.getElementById("more-quotes-grid");
-  if (moreGrid) {
-    const more = content.quotes
-      .filter((q) => q.id !== quote.id && (q.author === quote.author || q.tags.some((t) => quote.tags.includes(t))))
-      .slice(0, 3);
-    moreGrid.innerHTML = more
-      .map(
-        (q) => `
-        <a class="related-card quote-related-card" href="quote-template.html?id=${q.id}">
-          ${quoteVisual(q, "related-card-image")}
-          <div class="related-card-body">
-            <p class="related-card-title">${q.author}</p>
-          </div>
-        </a>
-      `
-      )
-      .join("");
-  }
-}
+// ------------ About page ------------
 
 function renderAboutPage(content) {
   const container = document.getElementById("about-detail");
@@ -338,6 +324,8 @@ function renderAboutPage(content) {
     <div class="article-body about-body">${renderMarkdown(about.body || "")}</div>
   `;
 }
+
+// ------------ Misc ------------
 
 function wireSubscribeForm() {
   const form = document.getElementById("subscribe-form");
@@ -370,7 +358,7 @@ async function init() {
 
   let content;
   try {
-    const res = await fetch(CONTENT_URL);
+    const res = await fetch(CONTENT_URL, { cache: "no-store" });
     if (!res.ok) throw new Error(`Failed to load content (${res.status})`);
     content = await res.json();
   } catch (err) {
@@ -382,12 +370,11 @@ async function init() {
   const feedItems = buildFeedItems(content);
 
   renderDailyQuote(content);
+  wireGalleryButton(content);
   renderTrending(feedItems);
   renderFeed(feedItems);
   renderArticlesOnly(content);
   renderArticlePage(content);
-  renderQuoteArchive(content);
-  renderQuotePage(content);
   renderAboutPage(content);
 }
 
