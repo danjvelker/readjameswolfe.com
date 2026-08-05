@@ -36,6 +36,30 @@
       "date": "2026-05-15",
       "clicks": 133,
       "publishToHomepage": false
+    },
+    {
+      "publishToHomepage": false,
+      "clicks": 0,
+      "id": "q2",
+      "text": "The two great graces essential to a saint in this life are faith and repentance. These are the two wings by which he flies to heaven.",
+      "author": "Thomas Watson",
+      "tags": [
+        "Repentance",
+        "Faith"
+      ],
+      "image": "/assets/uploads/substackquotes2.png"
+    },
+    {
+      "publishToHomepage": false,
+      "clicks": 0,
+      "id": "q3",
+      "text": "Let us bury death in a garden, and seal the hole with a cross. For him there will be no spring.",
+      "author": "N.D. Wilson",
+      "tags": [
+        "Resurrection",
+        "Death"
+      ],
+      "image": "/assets/uploads/substackquotes3.png"
     }
   ]
 }
