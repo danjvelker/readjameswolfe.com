@@ -11,18 +11,50 @@ function formatDate(isoDate) {
   return d.toLocaleDateString("en-US", { year: "numeric", month: "long", day: "numeric" });
 }
 
+// Extracts a YouTube video ID from whatever the author pasted — a full
+// watch URL, a share URL, an embed URL, or just the bare ID itself.
+function extractYouTubeId(raw) {
+  const trimmed = (raw || "").trim();
+  const patterns = [
+    /(?:youtube\.com\/watch\?v=|youtube\.com\/embed\/|youtu\.be\/|youtube\.com\/shorts\/)([a-zA-Z0-9_-]{11})/,
+    /^([a-zA-Z0-9_-]{11})$/
+  ];
+  for (const re of patterns) {
+    const match = trimmed.match(re);
+    if (match) return match[1];
+  }
+  return null;
+}
+
 // Converts our small custom ":::scripture REF ... :::" block into the
 // styled scripture callout, then hands the rest to marked() for normal
 // markdown. Runs before marked so the raw HTML passes through untouched.
 function renderMarkdown(md) {
-  const withScripture = md.replace(
+  let processed = md;
+
+  // Full-width image block: :::image path/to/file.jpg|Optional caption:::
+  processed = processed.replace(/:::image\s+([^\n|]+?)(?:\|([^\n]*))?\s*:::/g, (match, src, caption) => {
+    const cap = caption && caption.trim() ? `<figcaption>${window.marked.parseInline(caption.trim())}</figcaption>` : "";
+    return `<figure class="article-embed-image"><img src="${optimizedSrc(src.trim(), 1200)}" alt="${(caption || "").trim() || "Article image"}" loading="lazy">${cap}</figure>`;
+  });
+
+  // YouTube embed block: :::youtube <url or ID>:::
+  processed = processed.replace(/:::youtube\s+([^\n]+?)\s*:::/g, (match, raw) => {
+    const id = extractYouTubeId(raw);
+    if (!id) return `<p><em>Couldn't recognize that YouTube link.</em></p>`;
+    return `<div class="article-embed-video"><iframe src="https://www.youtube.com/embed/${id}" title="YouTube video" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen loading="lazy"></iframe></div>`;
+  });
+
+  // Scripture callout block: :::scripture REF ... :::
+  processed = processed.replace(
     /:::scripture\s+([^\n]+)\n([\s\S]*?):::/g,
     (match, ref, body) => {
       const html = window.marked.parseInline(body.trim());
       return `<blockquote class="scripture"><p>${html}</p><span class="scripture-ref">${ref.trim()}</span></blockquote>`;
     }
   );
-  return window.marked.parse(withScripture);
+
+  return window.marked.parse(processed);
 }
 
 // Tags from the CMS's list widget normally come back as plain strings,
@@ -36,11 +68,25 @@ function normalizeTags(tags) {
 // Article header images can be either a real uploaded file (from the CMS,
 // e.g. "assets/uploads/photo.jpg") or one of the built-in gradient
 // placeholder classes (img-1..img-4) used by the original dummy content.
+// Real files are routed through img.php, which resizes/compresses them
+// to a sensible size for the context and caches the result — the
+// original upload in the repo is never touched.
+const IMAGE_WIDTHS = {
+  "card-image": 900,
+  "article-hero": 1400,
+  "related-card-image": 350
+};
+
+function optimizedSrc(image, width) {
+  return `/img.php?src=${encodeURIComponent(image)}&w=${width}`;
+}
+
 function articleImageMarkup(image, className) {
   const cls = className || "card-image";
   const looksLikeFile = image && (image.includes("/") || /\.(png|jpe?g|webp|gif|svg)$/i.test(image));
   if (looksLikeFile) {
-    return `<div class="${cls}" style="background-image:url('${image}')"></div>`;
+    const width = IMAGE_WIDTHS[cls] || 900;
+    return `<div class="${cls}" style="background-image:url('${optimizedSrc(image, width)}')"></div>`;
   }
   return `<div class="${cls} ${image || "img-1"}"></div>`;
 }
@@ -55,7 +101,7 @@ function getSlugFromUrl() {
   if (fromQuery) return fromQuery;
 
   const path = window.location.pathname.replace(/^\/+|\/+$/g, "");
-  const knownPages = ["", "index.html", "about.html", "articles.html", "article-template.html", "admin"];
+  const knownPages = ["", "index.html", "about.html", "articles.html", "article-template.html", "article.php", "admin"];
   if (path && !knownPages.includes(path)) return path;
   return null;
 }
@@ -81,7 +127,7 @@ function renderDailyQuote(content) {
   const pick = gallery[Math.floor(Math.random() * gallery.length)];
   el.innerHTML = `
     <button type="button" class="daily-quote-img-btn" id="daily-quote-open">
-      <img src="${pick}" alt="Quote graphic" class="quote-photo"
+      <img src="${optimizedSrc(pick, 500)}" alt="Quote graphic" class="quote-photo"
         onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
       <div class="quote-img-placeholder" style="display:none;"><span>Quote image</span></div>
     </button>
@@ -112,7 +158,7 @@ function openGalleryModal(images) {
   const grid = images
     .map(
       (src) => `
-      <img src="${src}" alt="Quote graphic" class="gallery-modal-img"
+      <img src="${optimizedSrc(src, 400)}" alt="Quote graphic" class="gallery-modal-img"
         onerror="this.style.display='none';">
     `
     )
@@ -258,8 +304,21 @@ function renderArticlePage(content) {
   if (!container) return;
 
   const slug = getSlugFromUrl();
-  const article = content.articles.find((a) => a.slug === slug) || content.articles[0];
-  if (!article) return;
+  const article = content.articles.find((a) => a.slug === slug);
+
+  if (!article) {
+    document.title = "Article Not Found — Read James Wolfe";
+    container.innerHTML = `
+      <div class="not-found">
+        <h1 class="article-title">Article Not Found</h1>
+        <p>This article doesn't exist, or may have been moved or removed.</p>
+        <a href="/articles.html" class="author-card-link">← Browse all articles</a>
+      </div>
+    `;
+    const related = document.getElementById("related-grid");
+    if (related) related.closest(".related-articles").style.display = "none";
+    return;
+  }
 
   document.title = `${article.title} — Read James Wolfe`;
   document.querySelector(".article-col").dataset.currentSlug = article.slug;
@@ -273,7 +332,7 @@ function renderArticlePage(content) {
     bio: "",
     photo: null
   };
-  const authorPhotoStyle = author.photo ? ` style="background-image:url('${author.photo}')"` : "";
+  const authorPhotoStyle = author.photo ? ` style="background-image:url('${optimizedSrc(author.photo, 200)}')"` : "";
 
   container.innerHTML = `
     <header class="article-header">

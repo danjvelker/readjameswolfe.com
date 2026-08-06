@@ -113,6 +113,56 @@ button:focus-visible {
   border-bottom-color: var(--accent);
 }
 
+.not-found {
+  padding: 40px 0 60px;
+}
+.not-found p {
+  font-family: var(--font-body);
+  color: var(--text-muted);
+  margin: 14px 0 24px;
+}
+
+.article-embed-image {
+  margin: 40px -20px;
+  text-align: center;
+}
+.article-embed-image img {
+  width: 100%;
+  border-radius: var(--radius);
+  display: block;
+}
+.article-embed-image figcaption {
+  margin-top: 10px;
+  font-family: var(--font-nav);
+  font-size: 13px;
+  color: var(--text-faint);
+}
+
+.article-embed-video {
+  position: relative;
+  width: 100%;
+  margin: 40px 0;
+  padding-bottom: 56.25%; /* 16:9 */
+  height: 0;
+  overflow: hidden;
+  border-radius: var(--radius);
+}
+.article-embed-video iframe {
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%;
+  height: 100%;
+  border: 0;
+}
+
+@media (max-width: 720px) {
+  .article-embed-image {
+    margin-left: 0;
+    margin-right: 0;
+    width: 100%;
+  }
+}
+
 /* ============================================
    Article Template
    ============================================ */

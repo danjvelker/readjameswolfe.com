@@ -143,13 +143,16 @@ history you can look back through.
 - **The "Clicks" field**: this powers the sidebar's Trending list. Real
   click tracking isn't wired up yet (see the phase 5 notes I gave you
   earlier) — for now this is a manual number, safe to leave at 0.
-- **RSS feed (`feed.xml`)**: this one can't update itself the way the
-  rest of the site does — RSS readers need real static XML, not
-  JavaScript-rendered content. After publishing new articles, someone
-  with Node installed can run `node scripts/generate-feed.js` locally
-  and push the updated `feed.xml`. I'm also happy to regenerate this for
-  you anytime in a future chat if you paste in your current
-  `content/site-content.json`.
+- **RSS feed (`feed.xml`) and sitemap (`sitemap.xml`)**: both are now generated
+  live by PHP on every request, straight from `content/site-content.json` —
+  nothing to manually regenerate anymore. Publishing a new article makes it
+  appear in both automatically.
+- **Image compression**: uploaded images are automatically resized and
+  compressed the first time they're displayed (via `img.php`), then cached —
+  this requires the standard PHP "GD" extension, which is enabled by default
+  on virtually all shared hosting including EthernetServers. If images ever
+  fail to load after an update, that's the first thing to check in cPanel's
+  PHP configuration (MultiPHP INI Editor → confirm `gd` is checked).
 - **Underline, text color, and highlight**: not included in this pass —
   the CMS's editor doesn't support these out of the box, and building
   them safely means custom plugin code I can't verify without being able

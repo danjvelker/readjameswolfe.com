@@ -1,23 +1,68 @@
+<?php
+// article.php
+// Handles the SEO/social-preview problem: since the article body is
+// normally filled in by JavaScript after the page loads, search engines
+// and link-preview bots (which mostly don't run JS) would otherwise see
+// the same generic title/description on every article. This file reads
+// the same content/site-content.json JS uses, server-side, just to fill
+// in accurate <title>/meta tags before the page is sent out. The actual
+// visible content is still rendered by app.js exactly as before —
+// nothing about how the page *works* changes, only what's in <head>.
+
+$slug = isset($_GET['slug']) ? preg_replace('/[^a-zA-Z0-9\-]/', '', $_GET['slug']) : '';
+
+$siteUrl = 'https://readjameswolfe.com';
+$defaultImage = $siteUrl . '/assets/favicon/favicon-512.png';
+
+$article = null;
+$jsonPath = __DIR__ . '/content/site-content.json';
+if (file_exists($jsonPath)) {
+    $data = json_decode(file_get_contents($jsonPath), true);
+    if (is_array($data) && isset($data['articles'])) {
+        foreach ($data['articles'] as $a) {
+            if (isset($a['slug']) && $a['slug'] === $slug) {
+                $article = $a;
+                break;
+            }
+        }
+    }
+}
+
+if ($article) {
+    $pageTitle = htmlspecialchars($article['title']) . ' — Read James Wolfe';
+    $pageDescription = htmlspecialchars($article['excerpt'] ?? 'An article from Read James Wolfe.');
+    $canonicalUrl = $siteUrl . '/' . htmlspecialchars($article['slug']);
+    $imageRaw = $article['image'] ?? '';
+    $looksLikeFile = $imageRaw && (strpos($imageRaw, '/') !== false || preg_match('/\.(png|jpe?g|webp|gif)$/i', $imageRaw));
+    $pageImage = $looksLikeFile ? $siteUrl . '/img.php?src=' . urlencode(ltrim($imageRaw, '/')) . '&w=1200' : $defaultImage;
+} else {
+    http_response_code(404);
+    $pageTitle = 'Article Not Found — Read James Wolfe';
+    $pageDescription = "This article doesn't exist or may have been removed.";
+    $canonicalUrl = $siteUrl . '/' . htmlspecialchars($slug);
+    $pageImage = $defaultImage;
+}
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Read James Wolfe</title>
-<meta name="description" content="Helping weary Christians find comfort and confidence in Christ.">
-<link rel="canonical" href="https://readjameswolfe.com/">
+<title><?php echo $pageTitle; ?></title>
+<meta name="description" content="<?php echo $pageDescription; ?>">
+<link rel="canonical" href="<?php echo $canonicalUrl; ?>">
 
-<meta property="og:type" content="website">
-<meta property="og:title" content="Read James Wolfe">
-<meta property="og:description" content="Helping weary Christians find comfort and confidence in Christ.">
-<meta property="og:url" content="https://readjameswolfe.com/">
-<meta property="og:image" content="https://readjameswolfe.com/assets/favicon/favicon-512.png">
+<meta property="og:type" content="article">
+<meta property="og:title" content="<?php echo $pageTitle; ?>">
+<meta property="og:description" content="<?php echo $pageDescription; ?>">
+<meta property="og:url" content="<?php echo $canonicalUrl; ?>">
+<meta property="og:image" content="<?php echo $pageImage; ?>">
 <meta property="og:site_name" content="Read James Wolfe">
 
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="Read James Wolfe">
-<meta name="twitter:description" content="Helping weary Christians find comfort and confidence in Christ.">
-<meta name="twitter:image" content="https://readjameswolfe.com/assets/favicon/favicon-512.png">
+<meta name="twitter:title" content="<?php echo $pageTitle; ?>">
+<meta name="twitter:description" content="<?php echo $pageDescription; ?>">
+<meta name="twitter:image" content="<?php echo $pageImage; ?>">
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -50,12 +95,22 @@
 
 <main class="wrap content-layout">
 
-  <!-- Chronological feed -->
-  <div class="feed-col">
-    <section class="feed" id="feed" aria-label="Latest writing">
-      <!-- populated by app.js -->
+  <!-- Article -->
+  <article class="article-col" data-current-slug="">
+
+    <div id="article-detail">
+      <!-- populated by app.js: header, hero, body, author card -->
+    </div>
+
+    <!-- Related articles -->
+    <section class="related-articles" aria-label="Related articles">
+      <h2 class="sidebar-heading">Related Reading</h2>
+      <div class="related-grid" id="related-grid">
+        <!-- populated by app.js -->
+      </div>
     </section>
-  </div>
+
+  </article>
 
   <!-- Sidebar -->
   <aside class="sidebar" aria-label="Sidebar">

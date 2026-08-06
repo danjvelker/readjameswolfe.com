@@ -102,7 +102,7 @@ collections:
                     "bulleted-list",
                     "numbered-list",
                   ]
-                editor_components: ["scripture"]
+                editor_components: ["scripture", "imageBlock", "youtubeEmbed"]
                 hint: "Use the quote-mark button for a normal block quote, or the Scripture Quote block (in the '+' menu) for styled Bible references. Switch to the pencil icon for raw markdown mode to add a horizontal rule (type --- on its own line)."
 
           - label: "Daily Quote Gallery"
