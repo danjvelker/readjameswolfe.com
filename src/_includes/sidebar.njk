@@ -1,0 +1,121 @@
+<aside class="sidebar" aria-label="Sidebar">
+
+  <div class="sidebar-block author-blurb">
+    <p>
+      Welcome. Every article and quote here is written or personally
+      selected by me — no ghostwriters, no content mills. If something
+      on this site is meaningful to you, it's because it was meaningful
+      to me first.
+    </p>
+  </div>
+
+  <div class="sidebar-block daily-quote-block">
+    <div class="daily-quote" id="daily-quote">
+      <!-- filled in by the small script below, picked fresh per visit -->
+    </div>
+    <p class="daily-quote-caption">Daily Quote</p>
+    <button type="button" class="view-gallery-btn" id="view-gallery-btn">View Gallery</button>
+  </div>
+
+  <div class="sidebar-block trending-block">
+    <h2 class="sidebar-heading">Trending</h2>
+    <ol class="trending-list" id="trending-list">
+      <li class="trending-empty">No reader activity tracked yet — check back once a few visits come in.</li>
+    </ol>
+  </div>
+
+</aside>
+
+<script type="application/json" id="gallery-data">{{ gallery.gallery | dump | safe }}</script>
+<script type="application/json" id="articles-index-data">{{ collections.articles | toArticleIndex | dump | safe }}</script>
+
+<script>
+(function () {
+  // --- Daily Quote: a real per-visit random pick, done in the browser
+  // since a static build can't "randomize" anything itself. ---
+  function optimizedSrc(src, w) {
+    var clean = (src || "").replace(/^\/+/, "");
+    return "/img.php?src=" + encodeURIComponent(clean) + "&w=" + w;
+  }
+
+  var galleryEl = document.getElementById("gallery-data");
+  var gallery = galleryEl ? JSON.parse(galleryEl.textContent) : [];
+  var dailyQuoteEl = document.getElementById("daily-quote");
+
+  if (dailyQuoteEl && gallery.length) {
+    var pick = gallery[Math.floor(Math.random() * gallery.length)];
+    dailyQuoteEl.innerHTML =
+      '<button type="button" class="daily-quote-img-btn" id="daily-quote-open">' +
+      '<img src="' + optimizedSrc(pick, 500) + '" alt="Quote graphic" class="quote-photo" ' +
+      'onerror="this.style.display=\'none\'; this.nextElementSibling.style.display=\'flex\';">' +
+      '<div class="quote-img-placeholder" style="display:none;"><span>Quote image</span></div>' +
+      '</button>';
+
+    var openBtn = document.getElementById("daily-quote-open");
+    if (openBtn) openBtn.addEventListener("click", function () { openGalleryModal(gallery); });
+  }
+
+  var galleryBtn = document.getElementById("view-gallery-btn");
+  if (galleryBtn) {
+    galleryBtn.addEventListener("click", function () { openGalleryModal(gallery); });
+    if (!gallery.length) galleryBtn.disabled = true;
+  }
+
+  function openGalleryModal(images) {
+    var existing = document.getElementById("quote-gallery-modal");
+    if (existing) existing.remove();
+
+    var modal = document.createElement("div");
+    modal.id = "quote-gallery-modal";
+    modal.className = "gallery-modal";
+    modal.setAttribute("role", "dialog");
+    modal.setAttribute("aria-label", "Quote gallery");
+
+    var grid = images.map(function (src) {
+      return '<img src="' + optimizedSrc(src, 400) + '" alt="Quote graphic" class="gallery-modal-img" onerror="this.style.display=\'none\';">';
+    }).join("");
+
+    modal.innerHTML =
+      '<div class="gallery-modal-inner">' +
+      '<button type="button" class="gallery-modal-close" aria-label="Close gallery">&times;</button>' +
+      '<div class="gallery-modal-grid">' + (grid || "<p>No quote images uploaded yet.</p>") + '</div>' +
+      '</div>';
+
+    document.body.appendChild(modal);
+    document.body.style.overflow = "hidden";
+
+    function close() {
+      modal.remove();
+      document.body.style.overflow = "";
+    }
+    modal.querySelector(".gallery-modal-close").addEventListener("click", close);
+    modal.addEventListener("click", function (e) { if (e.target === modal) close(); });
+    document.addEventListener("keydown", function escHandler(e) {
+      if (e.key === "Escape") { close(); document.removeEventListener("keydown", escHandler); }
+    });
+  }
+
+  // --- Trending: genuinely live data (real visitor click counts), so
+  // this is the one thing on the page that still needs a fetch(). ---
+  var indexEl = document.getElementById("articles-index-data");
+  var articlesIndex = indexEl ? JSON.parse(indexEl.textContent) : [];
+  var trendingList = document.getElementById("trending-list");
+
+  if (trendingList && articlesIndex.length) {
+    fetch("/content/click-counts.json", { cache: "no-store" })
+      .then(function (res) { return res.ok ? res.json() : {}; })
+      .catch(function () { return {}; })
+      .then(function (counts) {
+        var withCounts = articlesIndex.map(function (a) {
+          return { title: a.title, slug: a.slug, clicks: counts[a.slug] || 0 };
+        });
+        withCounts.sort(function (a, b) { return b.clicks - a.clicks; });
+        var topThree = withCounts.slice(0, 3);
+        if (!topThree.some(function (a) { return a.clicks > 0; })) return; // leave default message
+        trendingList.innerHTML = topThree.map(function (a) {
+          return '<li><a href="/' + a.slug + '/">' + a.title + '</a></li>';
+        }).join("");
+      });
+  }
+})();
+</script>

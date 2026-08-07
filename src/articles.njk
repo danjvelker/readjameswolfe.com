@@ -1,0 +1,88 @@
+---
+layout: base.njk
+pageTitle: "Articles — Read James Wolfe"
+pageDescription: "Long-form essays on grace, patience, and the ordinary shape of the Christian life."
+---
+
+<main class="wrap archive-main">
+
+  <div class="archive-header">
+    <h1 class="archive-title">Articles</h1>
+    <p class="archive-intro">Long-form essays on grace, patience, and the ordinary shape of the Christian life, newest first. Filter by topic below.</p>
+  </div>
+
+  <div class="quote-filters">
+    <div class="tag-filters" id="article-tag-filters" role="group" aria-label="Filter by topic"></div>
+  </div>
+
+  <p id="articles-empty" class="archive-empty" hidden>No articles match that topic yet.</p>
+
+  <div class="feed" id="articles-grid">
+    {% set allArticles = collections.articles | reverse %}
+    {% for item in allArticles %}
+      <a class="card" href="{{ item.url }}" data-tags="{{ item.data.tags | join(',') }}">
+        {% if item.data.image | isImageFile %}
+          <div class="card-image" style="background-image:url('{{ item.data.image | imgProxy(900) }}')"></div>
+        {% else %}
+          <div class="card-image {{ item.data.image or 'img-1' }}"></div>
+        {% endif %}
+        <div class="card-body">
+          <span class="card-type">Article</span>
+          <h2 class="card-title">{{ item.data.title }}</h2>
+          <p class="card-excerpt">{{ item.data.excerpt }}</p>
+          <ul class="card-tags">{% for tag in item.data.tags %}<li>{{ tag }}</li>{% endfor %}</ul>
+          <p class="card-meta">{{ item.data.date | formatDate }}</p>
+        </div>
+      </a>
+    {% endfor %}
+  </div>
+
+</main>
+
+<script>
+(function () {
+  var grid = document.getElementById("articles-grid");
+  var tagBar = document.getElementById("article-tag-filters");
+  var emptyState = document.getElementById("articles-empty");
+  if (!grid || !tagBar) return;
+
+  var cards = Array.prototype.slice.call(grid.querySelectorAll(".card"));
+  var allTags = new Set();
+  cards.forEach(function (card) {
+    (card.dataset.tags || "").split(",").filter(Boolean).forEach(function (t) { allTags.add(t); });
+  });
+
+  var sortedTags = Array.from(allTags).sort();
+  var activeTag = "All";
+
+  ["All"].concat(sortedTags).forEach(function (tag) {
+    var btn = document.createElement("button");
+    btn.type = "button";
+    btn.className = "tag-pill" + (tag === "All" ? " active" : "");
+    btn.dataset.tag = tag;
+    btn.textContent = tag;
+    tagBar.appendChild(btn);
+  });
+
+  function applyFilter() {
+    var visibleCount = 0;
+    cards.forEach(function (card) {
+      var tags = (card.dataset.tags || "").split(",").filter(Boolean);
+      var match = activeTag === "All" || tags.indexOf(activeTag) !== -1;
+      card.hidden = !match;
+      if (match) visibleCount++;
+    });
+    emptyState.hidden = visibleCount !== 0;
+  }
+
+  tagBar.addEventListener("click", function (e) {
+    var btn = e.target.closest(".tag-pill");
+    if (!btn) return;
+    activeTag = btn.dataset.tag;
+    tagBar.querySelectorAll(".tag-pill").forEach(function (el) {
+      el.classList.toggle("active", el === btn);
+    });
+    applyFilter();
+  });
+})();
+</script>

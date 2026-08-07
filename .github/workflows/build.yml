@@ -1,0 +1,47 @@
+name: Build Eleventy Site (Phase 2 — preview only, not live)
+
+# Runs automatically every time anything is pushed to main — including
+# when DecapBridge publishes a CMS edit, since that's a push under the
+# hood too. Pushes the finished build to a separate "built-site" branch
+# so it can be inspected. Nothing here touches the actual live site or
+# the content it currently reads from.
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch: {} # lets you also trigger it manually from GitHub's Actions tab
+
+permissions:
+  contents: write # needed so the last step can push the built branch
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout main
+        uses: actions/checkout@v4
+        with:
+          ref: main
+
+      - name: Set up Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Build with Eleventy
+        run: npx eleventy
+
+      - name: Push build output to built-site branch
+        run: |
+          cd _site
+          git init -q
+          git checkout -b built-site
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add -A
+          git commit -q -m "Build from ${{ github.sha }}"
+          git remote add origin "https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/${{ github.repository }}.git"
+          git push --force origin built-site

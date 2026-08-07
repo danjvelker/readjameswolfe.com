@@ -1,0 +1,32 @@
+---
+layout: base.njk
+pageTitle: "Read James Wolfe"
+pageDescription: "Helping weary Christians find comfort and confidence in Christ."
+---
+
+<main class="wrap content-layout">
+
+  <div class="feed-col">
+    <section class="feed" aria-label="Latest writing">
+      {% set feedArticles = collections.articles | selectattr("data.publishToHomepage") | reverse %}
+      {% for item in feedArticles %}
+        <a class="card" href="{{ item.url }}">
+          {% if item.data.image | isImageFile %}
+            <div class="card-image" style="background-image:url('{{ item.data.image | imgProxy(900) }}')"></div>
+          {% else %}
+            <div class="card-image {{ item.data.image or 'img-1' }}"></div>
+          {% endif %}
+          <div class="card-body">
+            <span class="card-type">Article</span>
+            <h2 class="card-title">{{ item.data.title }}</h2>
+            <p class="card-excerpt">{{ item.data.excerpt }}</p>
+            <p class="card-meta">{{ item.data.date | formatDate }}</p>
+          </div>
+        </a>
+      {% endfor %}
+    </section>
+  </div>
+
+  {% include "sidebar.njk" %}
+
+</main>

@@ -1,0 +1,12 @@
+---
+layout: base.njk
+pageTitle: "About — Read James Wolfe"
+pageDescription: "About James Wolfe."
+---
+
+<main class="wrap about-main">
+  <div class="about-detail">
+    <h1 class="article-title">{{ about.title }}</h1>
+    <div class="article-body about-body">{{ about.body | markdown | safe }}</div>
+  </div>
+</main>

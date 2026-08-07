@@ -1,0 +1,71 @@
+---
+layout: base.njk
+---
+{% set pageTitle = title + " — Read James Wolfe" %}
+{% set pageDescription = excerpt %}
+{% set ogType = "article" %}
+{% set ogImage = ("https://readjameswolfe.com" + (image | imgProxy(1200))) if (image | isImageFile) else "https://readjameswolfe.com/assets/favicon/favicon-512.png" %}
+
+<main class="wrap content-layout">
+
+  <article class="article-col" data-current-slug="{{ slug }}">
+
+    <header class="article-header">
+      <span class="card-type">Article</span>
+      <h1 class="article-title">{{ title }}</h1>
+      <p class="article-meta">By {{ author or "James Wolfe" }} &nbsp;&middot;&nbsp; {{ date | formatDate }} &nbsp;&middot;&nbsp; {{ content | readingTime }} min read</p>
+    </header>
+
+    {% if image | isImageFile %}
+      <div class="article-hero" style="background-image:url('{{ image | imgProxy(1400) }}')" role="img" aria-label="Header image for {{ title }}"></div>
+    {% else %}
+      <div class="article-hero {{ image or 'img-1' }}" role="img" aria-label="Header image for {{ title }}"></div>
+    {% endif %}
+
+    <div class="article-body">
+      {{ content | safe }}
+    </div>
+
+    {% set authorData = authors | selectattr("name", "equalto", author or "James Wolfe") | first %}
+    <section class="author-card">
+      {% if authorData and (authorData.photo | isImageFile) %}
+        <div class="author-photo" aria-hidden="true" style="background-image:url('{{ authorData.photo | imgProxy(200) }}')"></div>
+      {% else %}
+        <div class="author-photo" aria-hidden="true"></div>
+      {% endif %}
+      <div class="author-card-body">
+        <h2 class="author-card-name">{{ author or "James Wolfe" }}</h2>
+        <p class="author-card-bio">{{ authorData.bio if authorData else "" }}</p>
+        <a href="/about/" class="author-card-link">More about the site →</a>
+      </div>
+    </section>
+
+    <section class="related-articles" aria-label="Related articles">
+      <h2 class="sidebar-heading">Related Reading</h2>
+      <div class="related-grid">
+        {% set related = collections.articles | rejectattr("data.slug", "equalto", slug) | reverse | limit(3) %}
+        {% for item in related %}
+          <a class="related-card" href="{{ item.url }}">
+            {% if item.data.image | isImageFile %}
+              <div class="related-card-image" style="background-image:url('{{ item.data.image | imgProxy(350) }}')"></div>
+            {% else %}
+              <div class="related-card-image {{ item.data.image or 'img-1' }}"></div>
+            {% endif %}
+            <div class="related-card-body">
+              <p class="related-card-title">{{ item.data.title }}</p>
+            </div>
+          </a>
+        {% endfor %}
+      </div>
+    </section>
+
+  </article>
+
+  {% include "sidebar.njk" %}
+
+</main>
+
+<script>
+  // Real, live click tracking — fires once per page view.
+  fetch("/track-click.php?slug={{ slug | urlencode }}").catch(function () {});
+</script>

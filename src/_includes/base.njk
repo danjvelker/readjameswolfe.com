@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>{{ pageTitle or "Read James Wolfe" }}</title>
+<meta name="description" content="{{ pageDescription or 'Helping weary Christians find comfort and confidence in Christ.' }}">
+<link rel="canonical" href="https://readjameswolfe.com{{ page.url }}">
+
+<meta property="og:type" content="{{ ogType or 'website' }}">
+<meta property="og:title" content="{{ pageTitle or 'Read James Wolfe' }}">
+<meta property="og:description" content="{{ pageDescription or 'Helping weary Christians find comfort and confidence in Christ.' }}">
+<meta property="og:url" content="https://readjameswolfe.com{{ page.url }}">
+<meta property="og:image" content="{{ ogImage or 'https://readjameswolfe.com/assets/favicon/favicon-512.png' }}">
+<meta property="og:site_name" content="Read James Wolfe">
+
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="{{ pageTitle or 'Read James Wolfe' }}">
+<meta name="twitter:description" content="{{ pageDescription or 'Helping weary Christians find comfort and confidence in Christ.' }}">
+<meta name="twitter:image" content="{{ ogImage or 'https://readjameswolfe.com/assets/favicon/favicon-512.png' }}">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;1,8..60,400&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="/styles.css">
+
+<link rel="icon" href="/favicon.ico" sizes="any">
+<link rel="icon" type="image/svg+xml" href="/assets/favicon/lantern.svg">
+<link rel="icon" type="image/png" sizes="16x16" href="/assets/favicon/favicon-16.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon/favicon-32.png">
+<link rel="apple-touch-icon" sizes="180x180" href="/assets/favicon/apple-touch-icon.png">
+</head>
+<body>
+
+{% include "header.njk" %}
+
+{{ content | safe }}
+
+{% include "footer.njk" %}
+
+</body>
+</html>

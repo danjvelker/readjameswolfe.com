@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="robots" content="noindex" />
+  <title>Content Manager — Read James Wolfe</title>
+</head>
+<body>
+
+  <!-- Decap CMS core (the admin UI itself).
+       Auth is handled by DecapBridge (see admin/config.yml's backend
+       block), not Netlify — Netlify deprecated Identity and Git Gateway
+       in Feb 2025, so that approach no longer works for new sites. -->
+  <script src="https://unpkg.com/decap-cms@^3.8.3/dist/decap-cms.js"></script>
+
+  <script>
+    // Registers a custom "Scripture Quote" block for the Articles rich
+    // text editor. Authors fill in a reference + verse text through a
+    // small form (no markdown syntax to remember), and it's stored in
+    // the article body as:
+    //   :::scripture REFERENCE
+    //   verse text
+    //   :::
+    // which app.js recognizes and renders with the site's scripture
+    // callout styling.
+    CMS.registerEditorComponent({
+      id: "scripture",
+      label: "Scripture Quote",
+      fields: [
+        { name: "reference", label: "Reference (e.g. John 3:16)", widget: "string" },
+        { name: "body", label: "Verse Text", widget: "text" }
+      ],
+      pattern: /^:::scripture\s+([^\n]+)\n([\s\S]*?):::$/,
+      fromBlock: function (match) {
+        return {
+          reference: match[1].trim(),
+          body: match[2].trim()
+        };
+      },
+      toBlock: function (obj) {
+        return ":::scripture " + obj.reference + "\n" + obj.body + "\n:::";
+      },
+      toPreview: function (obj) {
+        return (
+          '<blockquote style="border-left:3px solid #7A8662;padding:12px 18px;' +
+          'background:rgba(122,134,98,0.08);font-style:italic;">' +
+          obj.body +
+          '<br/><strong style="font-style:normal;">' +
+          obj.reference +
+          "</strong></blockquote>"
+        );
+      }
+    });
+
+    // "Image Block" — a full-width image with an optional caption,
+    // dropped in as its own line rather than wrapped around text (like
+    // Substack's image blocks). Stored as:
+    //   :::image path/to/file.jpg|Optional caption:::
+    CMS.registerEditorComponent({
+      id: "imageBlock",
+      label: "Image Block",
+      fields: [
+        { name: "image", label: "Image", widget: "image" },
+        { name: "caption", label: "Caption (optional)", widget: "string", required: false }
+      ],
+      pattern: /^:::image\s+([^\n|]+?)(?:\|([^\n]*))?\s*:::$/,
+      fromBlock: function (match) {
+        return {
+          image: match[1] ? match[1].trim() : "",
+          caption: match[2] ? match[2].trim() : ""
+        };
+      },
+      toBlock: function (obj) {
+        var caption = obj.caption ? "|" + obj.caption : "";
+        return ":::image " + obj.image + caption + ":::";
+      },
+      toPreview: function (obj) {
+        return (
+          '<div style="text-align:center;">' +
+          '<img src="' + obj.image + '" style="max-width:100%;border-radius:4px;" />' +
+          (obj.caption ? '<div style="font-size:12px;opacity:0.7;margin-top:6px;">' + obj.caption + "</div>" : "") +
+          "</div>"
+        );
+      }
+    });
+
+    // "YouTube Embed" — paste any YouTube link (watch, share, or embed
+    // URL) and it becomes a full-width responsive video block. Stored
+    // as:
+    //   :::youtube <whatever URL or ID was pasted>:::
+    // app.js figures out the actual video ID when rendering, so this
+    // component doesn't need to parse the URL itself.
+    CMS.registerEditorComponent({
+      id: "youtubeEmbed",
+      label: "YouTube Video",
+      fields: [
+        { name: "url", label: "YouTube Link", widget: "string", hint: "Paste the full YouTube URL (any format works)." }
+      ],
+      pattern: /^:::youtube\s+([^\n]+?)\s*:::$/,
+      fromBlock: function (match) {
+        return { url: match[1].trim() };
+      },
+      toBlock: function (obj) {
+        return ":::youtube " + obj.url + ":::";
+      },
+      toPreview: function (obj) {
+        return '<div style="padding:14px;border:1px dashed #999;text-align:center;">▶ YouTube video: ' + obj.url + "</div>";
+      }
+    });
+  </script>
+
+</body>
+</html>
