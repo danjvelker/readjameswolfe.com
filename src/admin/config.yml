@@ -58,8 +58,7 @@ collections:
       - label: "Tags"
         name: "tags"
         widget: "list"
-        field: { label: "Tag", name: "tag", widget: "string" }
-        hint: "Click 'Add' below to add each tag separately. Used for filtering on the Articles page."
+        hint: "Type tags separated by commas, e.g. Grace, Patience, Suffering."
       - label: "Show in Homepage Feed"
         name: "publishToHomepage"
         widget: "boolean"
@@ -141,6 +140,7 @@ collections:
         name: "settingsFile"
         fields:
           - { label: "Header Tagline", name: "tagline", widget: "string", hint: "Shown under the site title in the header." }
+          - { label: "Sidebar Welcome Blurb", name: "sidebarBlurb", widget: "text", hint: "The short 'Welcome...' note shown at the top of the sidebar on every page." }
           - { label: "Footer Subscribe Text", name: "footerSubscribeText", widget: "string" }
           - { label: "Copyright Line", name: "copyrightLine", widget: "string" }
           - { label: "Quotes Subdomain URL", name: "quotesUrl", widget: "string", hint: "Where the 'Quotes' nav link goes." }

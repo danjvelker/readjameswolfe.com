@@ -80,7 +80,7 @@ module.exports = function (eleventyConfig) {
   eleventyConfig.addPassthroughCopy("src/robots.txt");
 
   // Swap in our extended markdown-it (custom blocks + normal markdown).
-  const md = markdownIt({ html: false, breaks: false, linkify: true }).use(customBlocksPlugin);
+  const md = markdownIt({ html: true, breaks: false, linkify: true }).use(customBlocksPlugin);
   eleventyConfig.setLibrary("md", md);
 
   // Lets non-.md templates (like the About page, driven from a data
