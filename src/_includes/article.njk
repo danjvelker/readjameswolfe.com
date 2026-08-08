@@ -43,7 +43,7 @@ layout: base.njk
     <section class="related-articles" aria-label="Related articles">
       <h2 class="sidebar-heading">Related Reading</h2>
       <div class="related-grid">
-        {% set related = collections.articles | rejectattr("data.slug", "equalto", slug) | reverse | limit(3) %}
+        {% set related = collections.articles | excludeSlug(slug) | reverse | limit(3) %}
         {% for item in related %}
           <a class="related-card" href="{{ item.url }}">
             {% if item.data.image | isImageFile %}

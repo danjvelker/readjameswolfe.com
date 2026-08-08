@@ -8,7 +8,7 @@ pageDescription: "Helping weary Christians find comfort and confidence in Christ
 
   <div class="feed-col">
     <section class="feed" aria-label="Latest writing">
-      {% set feedArticles = collections.articles | selectattr("data.publishToHomepage", "equalto", true) | reverse %}
+      {% set feedArticles = collections.articles | onlyPublishedToHomepage | reverse %}
       {% for item in feedArticles %}
         <a class="card" href="{{ item.url }}">
           {% if item.data.image | isImageFile %}

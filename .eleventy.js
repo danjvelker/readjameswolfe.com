@@ -110,6 +110,19 @@ module.exports = function (eleventyConfig) {
     }));
   });
 
+  // Plain JS filters for filtering the articles collection — used
+  // instead of Nunjucks' selectattr/rejectattr with dotted paths like
+  // "data.publishToHomepage", which don't actually work the way you'd
+  // expect (Nunjucks treats that as a literal, single property name,
+  // not a nested-path lookup) — this guarantees correct behavior.
+  eleventyConfig.addFilter("onlyPublishedToHomepage", (collection) => {
+    return (collection || []).filter((item) => item.data.publishToHomepage);
+  });
+
+  eleventyConfig.addFilter("excludeSlug", (collection, slug) => {
+    return (collection || []).filter((item) => item.data.slug !== slug);
+  });
+
   // True for a real uploaded file path (e.g. "assets/uploads/x.jpg"),
   // false for one of the built-in gradient placeholder class names
   // (e.g. "img-1"). Used everywhere an image field could be either.
