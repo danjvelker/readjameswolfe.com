@@ -99,6 +99,11 @@ module.exports = function (eleventyConfig) {
     return new Date(dateObj).toLocaleDateString("en-US", { year: "numeric", month: "long", day: "numeric" });
   });
 
+  // RSS 2.0 requires pubDate in RFC 822 format, not a plain date string.
+  eleventyConfig.addFilter("rfc822Date", (dateStr) => {
+    return new Date(dateStr + "T12:00:00Z").toUTCString();
+  });
+
   eleventyConfig.addFilter("limit", (arr, n) => {
     return Array.isArray(arr) ? arr.slice(0, n) : arr;
   });

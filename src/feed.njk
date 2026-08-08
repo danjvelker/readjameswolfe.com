@@ -1,0 +1,22 @@
+---
+permalink: "/feed.xml"
+eleventyExcludeFromCollections: true
+---
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0">
+  <channel>
+    <title>Read James Wolfe</title>
+    <link>https://readjameswolfe.com</link>
+    <description>{{ settings.tagline }}</description>
+    <language>en-us</language>
+{%- for item in collections.articles | reverse %}
+    <item>
+      <title>{{ item.data.title | escape }}</title>
+      <link>https://readjameswolfe.com{{ item.url }}</link>
+      <guid>https://readjameswolfe.com{{ item.url }}</guid>
+      <pubDate>{{ item.data.date | rfc822Date }}</pubDate>
+      <description>{{ item.data.excerpt | escape }}</description>
+    </item>
+{%- endfor %}
+  </channel>
+</rss>
