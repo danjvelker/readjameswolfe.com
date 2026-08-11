@@ -4,7 +4,17 @@
     <div class="footer-subscribe">
       <h2 class="sidebar-heading">Subscribe</h2>
       <p class="footer-subscribe-copy">{{ settings.footerSubscribeText }}</p>
-      <form class="subscribe-form" id="subscribe-form">
+      <form
+        class="subscribe-form"
+        id="subscribe-form"
+        data-buttondown-username="{{ settings.buttondownUsername }}"
+        {% if settings.buttondownUsername %}
+        action="https://buttondown.com/api/emails/embed-subscribe/{{ settings.buttondownUsername }}"
+        method="post"
+        target="popupwindow"
+        onsubmit="window.open('https://buttondown.com/{{ settings.buttondownUsername }}', 'popupwindow')"
+        {% endif %}
+      >
         <label for="subscribe-email" class="sr-only">Email address</label>
         <input type="email" id="subscribe-email" name="email" placeholder="you@example.com" required>
         <button type="submit">Subscribe</button>
@@ -60,15 +70,27 @@
 </footer>
 
 <script>
-  // Subscribe form: no real email provider connected yet.
+  // Subscribe form: shows a placeholder message until a Buttondown
+  // username is set in Site Settings, at which point the form submits
+  // for real (see the action/method/target attributes set above).
   document.addEventListener("DOMContentLoaded", function () {
     var form = document.getElementById("subscribe-form");
     var note = document.getElementById("subscribe-note");
     if (!form || !note) return;
-    form.addEventListener("submit", function (e) {
-      e.preventDefault();
-      note.textContent = "Thanks — subscription form isn't connected yet.";
-      form.reset();
-    });
+
+    var isConnected = !!form.dataset.buttondownUsername;
+
+    if (!isConnected) {
+      form.addEventListener("submit", function (e) {
+        e.preventDefault();
+        note.textContent = "Thanks — subscription form isn't connected yet.";
+        form.reset();
+      });
+    } else {
+      form.addEventListener("submit", function () {
+        note.textContent = "Check the new tab to confirm your subscription.";
+        form.reset();
+      });
+    }
   });
 </script>

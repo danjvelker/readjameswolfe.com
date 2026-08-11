@@ -100,6 +100,14 @@ collections:
             name: "body"
             widget: "markdown"
             buttons: ["bold", "italic", "link", "heading-two", "heading-three", "quote", "bulleted-list", "numbered-list"]
+          - label: "Contact Blurb"
+            name: "contactBlurb"
+            widget: "text"
+            hint: "Shown in the 'Contact the Author' section at the bottom of the About page."
+          - label: "Contact Email"
+            name: "contactEmail"
+            widget: "string"
+            hint: "Shown as a clickable email link. Substack and Facebook links in this section reuse whatever you've set in Site Settings, so they only need to be updated in one place."
 
   - name: "authors"
     label: "Authors"
@@ -158,6 +166,11 @@ collections:
           - { label: "Header Tagline", name: "tagline", widget: "string", hint: "Shown under the site title in the header." }
           - { label: "Sidebar Welcome Blurb", name: "sidebarBlurb", widget: "text", hint: "The short 'Welcome...' note shown at the top of the sidebar on every page." }
           - { label: "Footer Subscribe Text", name: "footerSubscribeText", widget: "string" }
+          - label: "Buttondown Username"
+            name: "buttondownUsername"
+            widget: "string"
+            required: false
+            hint: "Leave blank until you've set up a Buttondown account (buttondown.com). Once you enter your username here, the Subscribe form activates automatically — no other changes needed. Your username is the part of your Buttondown URL after buttondown.com/, e.g. 'jameswolfe' from buttondown.com/jameswolfe."
           - { label: "Copyright Line", name: "copyrightLine", widget: "string" }
           - { label: "Quotes Subdomain URL", name: "quotesUrl", widget: "string", hint: "Where the 'Quotes' nav link goes." }
           - { label: "Substack URL", name: "substackUrl", widget: "string" }

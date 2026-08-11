@@ -8,5 +8,15 @@ pageDescription: "About James Wolfe."
   <div class="about-detail">
     <h1 class="article-title">{{ about.title }}</h1>
     <div class="article-body about-body">{{ about.body | markdown | safe }}</div>
+
+    <section class="contact-section">
+      <h2 class="sidebar-heading">Contact the Author</h2>
+      <p class="contact-blurb">{{ about.contactBlurb }}</p>
+      <ul class="contact-list">
+        <li><a href="mailto:{{ about.contactEmail }}">{{ about.contactEmail }}</a></li>
+        <li><a href="{{ settings.substackUrl }}" target="_blank" rel="noopener">Substack</a></li>
+        <li><a href="{{ settings.socialLinks.facebook }}" target="_blank" rel="noopener">Facebook</a></li>
+      </ul>
+    </section>
   </div>
 </main>
