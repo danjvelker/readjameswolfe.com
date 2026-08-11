@@ -132,6 +132,22 @@ collections:
             hint: "Upload quote graphics here. The sidebar shows one at random on each visit, with a button visitors can click to see the whole gallery."
             field: { label: "Image", name: "image", widget: "image" }
 
+  - name: "partners"
+    label: "Partner Sites"
+    files:
+      - file: "src/_data/partners.json"
+        label: "Partner Sites"
+        name: "partnersFile"
+        fields:
+          - label: "Sites"
+            name: "partners"
+            widget: "list"
+            summary: "{{name}}"
+            hint: "Shown quietly in the footer. Add or remove sites here."
+            fields:
+              - { label: "Name", name: "name", widget: "string" }
+              - { label: "URL", name: "url", widget: "string" }
+
   - name: "settings"
     label: "Site Settings"
     files:

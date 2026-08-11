@@ -1,0 +1,23 @@
+---
+layout: base.njk
+pageTitle: "Quote Gallery — Read James Wolfe"
+pageDescription: "A gallery of daily quote graphics."
+---
+
+<main class="wrap gallery-page-main">
+
+  <div class="archive-header">
+    <h1 class="archive-title">Quote Gallery</h1>
+  </div>
+
+  <div class="gallery-page-grid">
+    {% if gallery.gallery and gallery.gallery.length %}
+      {% for src in gallery.gallery %}
+        <img src="{{ src | imgProxy(900) }}" alt="Quote graphic" class="gallery-page-img" loading="lazy">
+      {% endfor %}
+    {% else %}
+      <p class="archive-empty">No quote images uploaded yet.</p>
+    {% endif %}
+  </div>
+
+</main>

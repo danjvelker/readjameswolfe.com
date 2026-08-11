@@ -43,6 +43,15 @@
       </ul>
     </div>
 
+    <div class="footer-partners">
+      <h2 class="sidebar-heading">Elsewhere</h2>
+      <ul class="partner-list">
+        {% for site in partners.partners %}
+          <li><a href="{{ site.url }}" target="_blank" rel="noopener">{{ site.name }}</a></li>
+        {% endfor %}
+      </ul>
+    </div>
+
     <div class="footer-colophon">
       <p>{{ settings.copyrightLine }}</p>
     </div>
