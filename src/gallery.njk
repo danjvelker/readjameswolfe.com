@@ -13,7 +13,9 @@ pageDescription: "A gallery of daily quote graphics."
   <div class="gallery-page-grid">
     {% if gallery.gallery and gallery.gallery.length %}
       {% for src in gallery.gallery %}
-        <img src="{{ src | imgProxy(900) }}" alt="Quote graphic" class="gallery-page-img" loading="lazy">
+        <button type="button" class="gallery-thumb-btn" data-full="{{ src | imgProxy(1400) }}">
+          <img src="{{ src | imgProxy(400) }}" alt="Quote graphic" class="gallery-page-img" loading="lazy">
+        </button>
       {% endfor %}
     {% else %}
       <p class="archive-empty">No quote images uploaded yet.</p>
@@ -21,3 +23,41 @@ pageDescription: "A gallery of daily quote graphics."
   </div>
 
 </main>
+
+<div class="gallery-lightbox" id="gallery-lightbox" role="dialog" aria-label="Expanded quote image" hidden>
+  <button type="button" class="gallery-lightbox-close" aria-label="Close">&times;</button>
+  <img src="" alt="Quote graphic" class="gallery-lightbox-img" id="gallery-lightbox-img">
+</div>
+
+<script>
+(function () {
+  var lightbox = document.getElementById("gallery-lightbox");
+  var lightboxImg = document.getElementById("gallery-lightbox-img");
+  var closeBtn = lightbox.querySelector(".gallery-lightbox-close");
+
+  function open(src) {
+    lightboxImg.src = src;
+    lightbox.hidden = false;
+    document.body.style.overflow = "hidden";
+  }
+  function close() {
+    lightbox.hidden = true;
+    lightboxImg.src = "";
+    document.body.style.overflow = "";
+  }
+
+  document.querySelectorAll(".gallery-thumb-btn").forEach(function (btn) {
+    btn.addEventListener("click", function () {
+      open(btn.dataset.full);
+    });
+  });
+
+  closeBtn.addEventListener("click", close);
+  lightbox.addEventListener("click", function (e) {
+    if (e.target === lightbox) close();
+  });
+  document.addEventListener("keydown", function (e) {
+    if (e.key === "Escape" && !lightbox.hidden) close();
+  });
+})();
+</script>
