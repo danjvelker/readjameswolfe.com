@@ -64,6 +64,13 @@ collections:
         widget: "boolean"
         default: true
         hint: "On = appears in the homepage feed. Off = still visible on the Articles page, just not the homepage."
+      - label: "Audio Reading (optional)"
+        name: "audio"
+        widget: "file"
+        required: false
+        media_folder: "assets/audio"
+        public_folder: "/assets/audio"
+        hint: "Upload an MP3 of you reading the article aloud. Leave blank for text-only articles — a player only appears when this is set."
       - label: "Body"
         name: "body"
         widget: "markdown"

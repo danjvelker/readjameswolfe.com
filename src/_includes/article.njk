@@ -22,6 +22,16 @@ layout: base.njk
       <div class="article-hero {{ image or 'img-1' }}" role="img" aria-label="Header image for {{ title }}"></div>
     {% endif %}
 
+    {% if audio %}
+      <div class="article-audio">
+        <p class="article-audio-label">Listen to this article</p>
+        <audio controls src="{{ audio }}">
+          Your browser doesn't support audio playback.
+          <a href="{{ audio }}">Download the audio file</a> instead.
+        </audio>
+      </div>
+    {% endif %}
+
     <div class="article-body">
       {{ content | safe }}
     </div>
