@@ -111,4 +111,4 @@ Know God. Seek God. Yes, fear God.
 
 You have no other or greater duty than this.
 
-*(*) - I'm deeply indebted to N.D. Wilson's 'Notes from the Tilt-A-Whirl' for this entire line of thinking. Go and read it, then go find some ants and praise God for them.*
+(*) - *I'm deeply indebted to N.D. Wilson's 'Notes from the Tilt-A-Whirl' for this entire line of thinking. Go and read it, then go find some ants and praise God for them*
