@@ -41,9 +41,9 @@ God, the author of all wisdom, connected *Castor canadensis* and *Anas platyrhyn
 
 That same God (still the same author of all wisdom) connected Him and us. He made us in his image, and then just to get the point across he *begat* (gesundheit) his beloved Son in an image that sure looked a heckuva lot like us (if maybe not exactly like Jonathan Roumie). The wisdom of God connected Him and us, God and man. The Lord of all creation eternally bound his person to us. And he did so entirely unlike the way he connected all those poor, confused beavers and ducks — although the gap between mammals and birds is far smaller than between man and the divine.
 
-Do you feel glorious? Compared to a platypus, maybe. But from the foot of the Himalayas, you probably get the sense that God’s world is far stranger, older, and more perplexing than whatever you were grumbling about when you woke up this morning.
-
 Imagine a paintbrush big enough to swath out Kilimanjaro with one stroke. Now imagine a hand delicate and steady enough to place the color in your eyes with that same brush. Look at yourself in a mirror. Understand that the person you see bears an uncanny family resemblance with the God of all creation, the maker and sustainer of life, the architect of beauty and the supreme lord of time and history.
+
+Do you feel glorious? Compared to a platypus, maybe. But from the foot of the Himalayas, you probably get the sense that God’s world is far stranger, older, and more perplexing than whatever you were grumbling about when you woke up this morning.
 
 The fear of the Lord is the beginning of wisdom.
 
@@ -53,11 +53,11 @@ The fear of the Lord is the beginning of knowledge; fools despise wisdom and ins
 
 A handful of people, throughout time and history, have come to the conclusion that God has had a few opinions on things. Luckily for us, he wrote several of them down. Fellas, we’ve got a book.
 
-What do you think God thinks about all day? Platypuses, apparently. And supernovas. The mating habits of ostriches. And you. He thinks a lot about you. Yes, God has opinions about your life and what’s going on. How often do you ask for them?
+What do you think God thinks about all day? Platypuses, apparently. And supernovas. The mating habits of ostriches, perhaps. And you. He thinks a lot about you. Yes, God has opinions about your life and what’s going on. How often do you ask for them?
 
 Do you despise instruction? Do you resent God’s opinions on your life — on your angers, your twisted desires, or the various catastrophes you’d like to make of your life if you could just get rid of that pesky intuition that you were designed with eternity in mind, and that all of life’s pleasures and vices are fleeting shadows in the end? *“No,”* you cry out, unjustly maligned. *“I would never do that. My plans are fantastic!”*
 
-(And with such conviction, the blind man paints what sounds like an elephant and hangs it on what feels like a wall.)
+(And with such conviction, the blind man paints what sounds like an elephant and hangs it on what smells like a wall.)
 
 Do you resent God’s opinions on your lifestyle? He has them, you know. They’re pretty comprehensive. Do you want to know what they are? If he could tell you, would it matter? Would you change anything about you if he asked? What if he wrote those things down for you? What if he made himself accessible and put his Spirit inside of you? What if he came to earth and lived in real history and told you how it was done?
 
