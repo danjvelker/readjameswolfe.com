@@ -19,7 +19,7 @@ publishToHomepage: true
 ---
 Zoom the camera out. (*)
 
-You reside on an oblate spheroid that spins with a rotational velocity of a thousand miles per hour, every hour, as it has done since ever before hours were defined. It is mostly uninhabitable, and much of it is actively trying to kill you. This spinning ball simultaneously hurtles through the universe at roughly 1.3 million miles per hour, circling a staggering ball of plasma and gas that scorches any planets closer to it or freezes those farther from it. You are one of 8.3 billion members of this spinning cosmic carousel, and none of you can stop the ride.
+You reside on an oblate spheroid that spins with a rotational velocity of a thousand miles per hour, every hour, as it has done since ever before hours were defined. It is mostly uninhabitable, and much of it is actively trying to kill you. This spinning ball simultaneously hurtles through the universe at roughly 1.3 million miles per hour, circling a staggering ball of plasma and gas that scorches any planets closer to it or freezes those farther from it. You are one of 8.3 billion members of this spinning cosmic carousel, and even if you could stop the ride, the resulting inertia would vaporize you instantaneously, laughing as it did.
 
 Zoom in a little.
 
