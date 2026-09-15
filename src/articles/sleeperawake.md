@@ -18,15 +18,15 @@ We can all feel it. The problem is real, and understanding this duality is cruci
 
 Identifying *who* we're discussing is also less simple than it may seem. Sure, we all have gut feelings we can point to; but just try and pin down some specifics and you'll find just how insufficient those are to form a robust definition of a church that's coasting. I know men and women who are deeply committed members of their churches, who have regular devotional practices, who are theologically sharp and can quote the Reformers, Patristics, and Puritans, and who have access to the most esoteric scripture references with perfect recall... and who I nevertheless wouldn't trust for a second to pray for me in a moment of crisis.
 
-Alternatively, I know of others who are messy and broken, but who have a vibrant and effective faith. They may not possess the same breadth of knowledge, discipline towards devotional times, or even serve as much as some others; they are not always the most beautiful or charismatic. They are not visibly gifted in leadership or with vast wells of charisma. And yet their faith is living, vibrant, woken, and radiant.
+Alternatively, I know of others who are messy and broken, but who have a vibrant and effective faith. They may not possess the same breadth of knowledge, discipline towards devotional times, or even serve as much as some others; they are not always the most beautiful or charismatic. They are not visibly gifted in leadership or with vast wells of charisma. And yet their faith is living, vibrant, radiant, and awoken.
 
 Now, no matter where we may be ourselves – however much maturity or wisdom we've acquired – we must always remember that we are never so far from these dangers ourselves that we can afford to point fingers without a great deal of self-examination first. So we must keep that in mind as we ask the question. *The first person you should ever diagnose is yourself.*
 
-So then what is it that raises faith to life? What makes a faith vibrant, robust, vigilant, and sharp, full of vitality and transformative energy? Why do we see this faith in some Christians but not in others? How do we know when faith is asleep, and how then do we wake it up?
+So then the questions. What then what is it that raises faith to life? What makes a faith vibrant, robust, vigilant, and sharp, full of vitality and transformative energy? Why do we see this faith in some Christians but not in others? How do we know when faith is asleep, and how then do we wake it up?
 
-I don't propose to give any academic definitions here. Those would be neither helpful nor wise, since none of us can actually judge the state of one another's hearts. (And what a mercy that is to us when we remember that they, too, are unable to judge our hearts. If you cannot approach this question without a modicum of humility, frankly, I'm not sure you have any business asking it.) But we can all identify vibes and share in broad concerns, and agree when we feel that something really ought to be done.
+I don't propose to give any real definitions here. Those would be neither helpful nor wise, since none of us can actually judge the state of one another's hearts. *(And what a mercy that is to us when we remember that they, too, are unable to judge our hearts. If you cannot approach this question without a modicum of humility, frankly, I'm not sure you have any business asking it.)* But we can all identify vibes and share in broad concerns, and agree when some small number of us feel that something really ought to be done.
 
-So instead, I propose that we examine ourselves and those around us by a simple application of three words found in Psalm 27. Let Scripture be our guide. These three words, far from a purity test, provide us with practical categories by which we can interrogate our hearts and begin to define what a living, vibrant, and vigilant faith looks like.
+So instead of erecting an ideological purity test, I propose that we examine ourselves and those around us by a simple application of three words found in Psalm 27. These three words, far from a purity test, provide us with practical categories by which we can interrogate our hearts and begin to define what a living, vibrant, and vigilant faith looks like. Let Scripture now be our guide.
 
 :::scripture Psalm 27:4 ESV
 One thing have I asked of the Lord, that will I seek after: that I may dwell in the house of the Lord all the days of my life, to gaze upon the beauty of the Lord and to inquire in his temple.
@@ -81,7 +81,7 @@ Sleeping faith lives for its own comfort. It objects to disruption, quails from 
 But those with faith that inquires will find themselves transformed by an eternal weight of glory beyond all comparison. Faith that inquires is ready to burst up out of the grave.
 
 :::scripture Philippians 3:13-14 ESV
-But one thing I do: forgetting what lies behind and straining forward to what lies ahead, I press on toward the goal for the prize of the upward call of God in Christ Jesus. 
+But one thing I do: forgetting what lies behind and straining forward to what lies ahead, I press on toward the goal for the prize of the upward call of God in Christ Jesus.
 :::
 
 Dwell, gaze, inquire. Have you awoken yet?
