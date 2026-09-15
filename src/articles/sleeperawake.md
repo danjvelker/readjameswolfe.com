@@ -70,7 +70,7 @@ But those with faith that gazes will yearn for the beauty of the Lord and discov
 
 Is your faith the inquisitive, transformative kind, or is it comfortable and sedentary?
 
-Living faith is always growing. It inquires and self-examines and desires transformation for what it finds. Faith that is awake and alive recognizes that, far from perfect or even just "okay," it is in desperate need of God's salvific power. The song of an inquiring faith is to cry out for that "amazing grace, how sweet the sound / that saved a wretch like me. / I once was lost, but now I'm found / was blind but now I see."
+Living faith is always growing. It inquires and self-examines and desires transformation for what it finds. Faith that is awake and alive recognizes that, far from perfect or even just "okay," it is in desperate need of God's salvific power. It does not inquire idly, but because it seeks the transformative power of the gospel. The song of an inquiring faith is to cry out for that *"amazing grace, how sweet the sound / that saved a wretch like me. / I once was lost, but now I'm found / was blind but now I see."*
 
 Does your faith inquire?
 
