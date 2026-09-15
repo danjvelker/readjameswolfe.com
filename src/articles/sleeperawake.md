@@ -42,9 +42,9 @@ A faith that is living is patient, abiding on the vine through seasons both of s
 
 Do you dwell?
 
-Living faith practices contentment and contends against envy. It suffers well, it laments with hope, and it works with endurance, secure in the knowledge that it is rooted in an eternal identity. A dwelling faith digs deep for black earth and good soil, deep roots and strong limbs, content to know that the God they dwell with will be faithful to grow patient seeds into bright springtime growth.
+Living faith practices contentment and contends against envy. It suffers well, it laments with hope, and it works with endurance, secure in the knowledge that it is rooted in an eternal identity. A dwelling faith digs deep for black earth and good soil, grows deep roots and strong limbs, abides contentedly knowing that the God they dwell with will be faithful to grow patient saplings into bright springtime growth.
 
-Faith that has fallen asleep is often roaming, searching for other idols when the pleasures of God withdraw for a time. It turns to other comforts when God is hard to be found. It grows dissatisfied when immediate rewards don't come. A sleeping faith is spiritually homeless, wandering forever but never rooted down. It never digs deep, never plants a foundation, and so it never grows, never rises high, never builds anything more than a canvas tent or a gypsy leaf on the wind. When faith does not dwell, it blows away in the wind.
+Faith that has fallen asleep is often roaming, searching for other idols when the pleasures of God withdraw for a time. It turns to other comforts when God is hard to be found. It grows dissatisfied when immediate rewards don't come. A sleeping faith is spiritually homeless, wandering forever but never rooted secure. It never digs deep, never plants a foundation; and so it never grows, never rises high, never builds anything more solid than a canvas tent or a gypsy leaf on the wind. When faith does not dwell, it doesn't endure past the first strong wind.
 
 But those with faith that dwells will drink deeply from the fruit of the vine, and eat and feast without money or price. Faith that dwells is invincibly strong in Christ.
 
@@ -54,11 +54,11 @@ But those with faith that dwells will drink deeply from the fruit of the vine, a
 
 Is your faith the kind that gazes, or does it quickly get bored?
 
-A living faith yearns for its identity as the Bride of Christ, longing for the wedding feast of the Lamb. It is fascinated with the ways of God, delighted in his precepts and character, and eager to seek and grow and follow that "lovely source of true delight / that I unseen adore. / Unveil thy beauty to my sight / that I might love thee more."
+A living faith yearns for its identity as the Bride of Christ, longing for the wedding feast of the Lamb. Living, gazing faith is adoring and utterly captivated. It is fascinated with the ways of God, delighted in his precepts and character, and eager to seek and grow and follow that *"lovely source of true delight / that I unseen adore. / Unveil thy beauty to my sight / that I might love thee more."*
 
 Do you gaze?
 
-Living faith sees God as indispensably lovely. It is captivated and infatuated with the heart of its Bridegroom and is fettered by its adoration. A gazing faith is a blushing faith, a fluttering-heart faith, a stammering and a stuttering faith whose heart is pounding and whose blood is rushing simply to gaze upon the One whose beauty has so completely magnetized us that our knees tremble and our mouths go dry.
+Living faith sees God as indispensably lovely. It is captivated and infatuated with the heart of its Bridegroom and is fettered by its adoration. A gazing faith is a blushing faith, a fluttering-heart faith, a stammering and a stuttering faith whose heart is pounding and whose blood is rushing simply to gaze upon the One whose beauty has so completely magnetized us that our knees tremble and our mouths go dry. Faith that gazes is faith that loves.
 
 A sleeping faith does not gaze. It is not captivated by God. It is bored with spiritual practice and may be more enamored with "practical" considerations. It may see God as useful, or true, worthwhile to follow, agreeable to a certain lifestyle, ethically compelling, civilizationally necessary; but it will not blush, because it does not gaze, and it is not wildly, madly, intimately caught up in that rapturous love that comes from a faith that is fully alive and fully awake.
 
