@@ -62,7 +62,7 @@ Living faith sees God as indispensably lovely. It is captivated and infatuated w
 
 A sleeping faith does not gaze. It is not captivated by God. It is bored with spiritual practice and may be more enamored with "practical" considerations. It may see God as useful, or true, worthwhile to follow, agreeable to a certain lifestyle, ethically compelling, civilizationally necessary; but it will not blush, because it does not gaze, and it is not wildly, madly, intimately caught up in that rapturous love that comes from a faith that is fully alive and fully awake.
 
-But those with faith that gazes will yearn for the beauty of the Lord and discover all that they wished for and more. Faith that gazes is hopelessly enamored with the beauty of Christ.
+But those with faith that gazes will yearn for the beauty of the Lord and discover all that they wished for and more. Faith that gazes is utterly enamored with Christ.
 
 ## INQUIRE
 
