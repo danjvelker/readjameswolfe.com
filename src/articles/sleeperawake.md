@@ -38,7 +38,7 @@ One thing have I asked of the Lord, that will I seek after: that I may dwell in 
 
 Is your faith the dwelling kind, or is it often roving?
 
-A faith that is living is patient, abiding on the vine through seasons both of springtime rain and dry summer heat. Awoken faith dwells in one place, committed through every circumstance to be rooted in the soil that it finds. It dwells because it trusts, and while the leaves may fall and the bark peel away, the living, unshakeable trunk of faith will always remain where the rooting system dwells. Abiding faith is trusting faith. "I fear no foe with Thee at hand to bless / Ills have no weight, tears lose their bitterness / Where is thy sting death? Where grave thy victory? / I triumph still – abide with me."
+A faith that is living is patient, abiding on the vine through seasons both of springtime rain and dry summer heat. Awoken faith dwells in one place, committed through every circumstance to be rooted in the soil that it finds. It dwells because it trusts, and while the leaves may fall and the bark peel away, the living, unshakeable trunk of faith will always remain where the root system digs. Abiding faith is trusting faith. *"I fear no foe with Thee at hand to bless / Ills have no weight, tears lose their bitterness / Where is thy sting death? Where grave thy victory? / I triumph still – abide with me."*
 
 Do you dwell?
 
