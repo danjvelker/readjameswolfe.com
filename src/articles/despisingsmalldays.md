@@ -26,7 +26,7 @@ Yes, these are the days of small things.
 
 They really suck.
 
-Not one of us dreams of a life of ordinary things. Even those of us with more domestic visions of the future can’t really say that the idealized pictures we conjure accurately reflect “ordinary” days – rusting cars, mortgage payments, lonely nights, bad haircuts, canceled plans, awkward silences, and random emotional swings. That’s an ordinary life. You know what ordinary feels like when it squeezes you; you know how ordinary smells and what it tastes like and the sounds it makes very early in the morning and altogether too late at night. It isn’t “pastoral” or “cute” or “nice.” Ordinary is hard, and ordinary is small. These are the small things we really do face each day.
+Not one of us dreams of a life of ordinary things. Even those of us with more domestic visions of the future can’t really say that the idealized pictures we conjure accurately reflect “ordinary” days – rusting cars, mortgage payments, lonely nights, bad haircuts, canceled plans, awkward silences, and random emotional swings. That’s an ordinary life. You know what ordinary feels like when it squeezes you; you know how ordinary smells and what it tastes like and the screeching sounds it makes very early in the morning and altogether too late at night. Ordinary isn’t “pastoral” or “cute” or “nice.” Ordinary is hard, and ordinary is small. These are the small things we really do face each day.
 
 Most of us despise the day of the small things.
 
@@ -36,7 +36,7 @@ Most of us despise the day of the small things.
 
 Many in the reconstruction following Israel’s exile also despised these days of small, ordinary faithfulness. But why do so many of us despise this day of small things? On what grounds do we resent the ordinary liturgical routines that shape our days — tooth brushing, laundry, traffic jams — and what makes us crave something more?
 
-Maybe we should begin with a different question. What are our expectations? And maybe more importantly, where did these expectations come from? When we look to Scripture, we see language and narrative expressed in terms of fiery pillars, of mountains thrown down, of mighty hosts and cosmic wrath at enmity with vagrant princes of wickedness. We see heroes and villains and a great romance of rescuing and death and sacrificial beauty. When we look to our own lives, we see chicken breasts that leaked slimy juices all down the refrigerator shelf.
+Maybe we should begin with a different question. What are our expectations? And maybe more importantly, where did these expectations come from? **When we look to Scripture, we see language and narrative expressed in terms of fiery pillars, of mountains thrown down, of mighty hosts and cosmic wrath at enmity with vagrant princes of wickedness. We see heroes and villains and a great romance of rescuing and death and sacrificial beauty.** When we look to our own lives, we see chicken breasts that leaked slimy juices all down the refrigerator shelf.
 
 The two visions do seem to be at odds.
 
@@ -58,7 +58,7 @@ So how does our vision need to be corrected?
 
 First, we have to tear down the belief that parts of our lives are more Christian than others. It’s all Christian. You brush your teeth as a Christian. You yell at your kids as a Christian. You doze off at work as a Christian. You post on Facebook as a Christian. You look at pornography as a Christian. If you’re a Christian, you don’t have the option to disassociate. It’s crosses all the way down.
 
-Someone will always be more pleased by your actions. It’s your choice who to please, Christ or his enemies. Who will you choose to please with your small days? Tear down your understanding that the ordinary is secular. It’s all sacred. It always was.
+Someone will always be more pleased by your actions. It’s your choice who to please, Christ or his enemies. Who will you choose to please with your small days? Tear down your understanding that the ordinary is secular. **It’s all sacred.** It always was.
 
 Does your ordinary life still seem small?
 
@@ -66,13 +66,13 @@ Does your ordinary life still seem small?
 
 The second belief to tear down is that which ignores the testimony of the incremental small. Nobody wakes up and runs five miles without a day of training in their lives. It takes hard work, discipline, exercise and diet, and a willingness to commit to do hard things without immediate gratification. It takes being willing to set aside present comforts for future goals.
 
-Zerubbabel didn’t build his temple in a day. He returned to it, day after day, even through adversity and discouragement. Do you hunt after your small days like you’re hungry for them to mean something? Does your life reflect someone willing to commit to the unglorious small, knowing how it leads to the great things of God?
+Zerubbabel didn’t build his temple in a day. He returned to it, day after day, even through adversity and discouragement. Do you hunt after your small days like you’re hungry for them to mean something? **Does your life reflect someone willing to commit to the unglorious small**, knowing how it leads to the great things of God?
 
 Reading your Bible, praying, offering worship up to God in a moment you could take for yourself – do these things still seem too small to make a difference?
 
 - - -
 
-In his book *Deeper*, Dane Ortlund speculates that “one reason you see modest growth and ongoing sin in your life... is that the Jesus you are following is a junior varsity Jesus, an unwittingly reduced Jesus, an unsurprising and predictable Jesus.” He defines this with even further clarity, saying bluntly but helpfully that we “have a domesticated view \[of Jesus] that, for all its doctrinal precision, has downsized the glory of Christ in our hearts.”
+In his book *Deeper*, Dane Ortlund speculates that “one reason you see modest growth and ongoing sin in your life... is that the Jesus you are following is a junior varsity Jesus, an unwittingly reduced Jesus, an unsurprising and predictable Jesus.” He defines this with even further clarity, saying bluntly but helpfully that **we “have a domesticated view \[of Jesus] that, for all its doctrinal precision, has downsized the glory of Christ in our hearts.”**
 
 Jesus is presently interceding for you. That means he’s praying for you all throughout your day. He’s constantly locked in. Do you think he’s bored when you’re tapping your fingers on the steering wheel in a standstill? As you’re scrubbing the toilet bowl? While you’re soothing the wailing infant for the seventeenth time this morning?
 
@@ -82,13 +82,13 @@ If these things don’t bore Jesus, if we can imagine him rapturously engaged wi
 
 The bad news is that our days of small things really are as awful as we think.
 
-The good news is that you’ll never truly experience a day of small things.
+**The good news is that you’ll never truly experience a day of small things.**
 
 When God looked at Zerubbabel’s countless days of bricks and lumber, he already saw the Temple it would become. When he looked at David’s days in shepherd’s fields, he saw all the Psalms offered up as the battle praises of Israel and the Church militant.
 
 When God looks at you, with your hair unwashed and your lips trembling with prayers you don’t have words for; when he sees you taking five minutes you don’t have just to read his Word; when he sees you offering your heart to him, messy and broken and overcome with distractions, sinful and confused and horribly uncertain, despairing of all those small things that never in your imagination would amount to anything of value—
 
-—He sees all the radiant glory that he is presently building in you. He sees the thousand bricks laid and his Temple complete: a vessel washed and sanctified by the blood of the Lamb, a dwelling made perfect for his enduring Spirit. When God looks at you, he sees the work finished, your faith complete, and the small made great at last.
+—He sees all the radiant glory that he is presently building in you. He sees the thousand bricks laid and his Temple complete: a vessel washed and sanctified by the blood of the Lamb, a dwelling made perfect for his enduring Spirit. **When God looks at you, he sees the work finished, your faith complete, and the small made great at last.**
 
 We despise the day of small things because in our failure of imagination we can only see each day as it comes, one brick set apart from the rest. But God can exult in the small, in the repetitive, in the daily imperceptible acts of formation that lead you into greater sanctification, and he sees the whole that the incremental small forms. For God does not hate the day of small things. How could he?
 
