@@ -31,7 +31,7 @@ Not one of us dreams of a life of ordinary things. Even those of us with more do
 Most of us despise the day of the small things.
 
 > :::scripture Zechariah 4:8-10 ESV
-> “Then the word of the Lord came to me, saying, “The hands of Zerubbabel have laid the foundation of this house; his hands shall also complete it. Then you will know that the Lord of hosts has sent me to you. For whoever has despised the day of small things shall rejoice, and shall see the plumb line in the hand of Zerubbabel.”
+> Then the word of the Lord came to me, saying, “The hands of Zerubbabel have laid the foundation of this house; his hands shall also complete it. Then you will know that the Lord of hosts has sent me to you. For whoever has despised the day of small things shall rejoice, and shall see the plumb line in the hand of Zerubbabel.
 > :::
 
 Many in the reconstruction following Israel’s exile also despised these days of small, ordinary faithfulness. But why do so many of us despise this day of small things? On what grounds do we resent the ordinary liturgical routines that shape our days — tooth brushing, laundry, traffic jams — and what makes us crave something more?
@@ -47,7 +47,7 @@ So then we might come to one of two understandings. The first option is that our
 That then leaves us with the second option, the other understanding we can come to. If it isn’t that our expectations are wrong, then maybe our vision is. In something of a different situation, one psalmist says this:
 
 > :::scripture Psalm 73:16-17 ESV
-> “But when I thought how to understand this, it seemed to me a wearisome task, until I went into the sanctuary of God; then I discerned their end.”
+> But when I thought how to understand this, it seemed to me a wearisome task, until I went into the sanctuary of God; then I discerned their end.
 > :::
 
 When the Bible sets our expectations in a direction that doesn’t seem to align with our vision, it’s usually the vision that needs correcting. Yes, some days you actually can’t trust your lying old eyes. But in the presence of God, many things become clear that before didn’t make much sense.
