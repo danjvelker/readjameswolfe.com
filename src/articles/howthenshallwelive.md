@@ -51,7 +51,7 @@ Is this the Word that dwells richly in us? Do we recognize a transformation into
 
 Last month I wrote about [hearts that have fallen asleep](https://readjameswolfe.com/sleeperawake/) and how we can stir them awake. In this article, I hope to accomplish a similarly modest goal. Below, I'll give five practical categories of broad tones that we should recognize in our lives, as well as the dangers of deficiency in any category. These are helpful, non-exhaustive markers we can look for in our lives to see whether we are gospel suffused or gospel deficient. This isn’t a formula; you aren’t finding exact proportions to mimic, like a chemist balancing reactants and products in a chemical equation. Rather, these are notes you should recognize, like the subtle undertones found in a rich wine. As you become more and more conformed to Christ, these notes and tones should be more and more recognizable in your life. There should be a recognition.
 
-But if God's Word comes to you more as a confrontation than a recognition, then maybe you aren't being shaped by it quite as much as you think. Maybe you ought to ask: "Do I love God enough to sound like him?" Maybe you need to devote yourself more to the indwelling of that beautiful, sharp, transformative Word.
+But if God's Word comes to you more as a confrontation than a recognition, then maybe you aren't being shaped by it quite as much as you think. Maybe you ought to ask: *"Do I love God enough to sound like him?"* Maybe you need to devote yourself more to the indwelling of that beautiful, sharp, transformative Word.
 
 Well, do you? Do you recognize his mannerisms in your daily life? Does your emotional life span that which he reveals in his Word? Does the word he has given dwell richly in you?
 
@@ -87,7 +87,7 @@ As God laments over this broken but beautiful world, will you lament with him?
 
 Are you routinely grateful?
 
-Christian gratitude is not vague and detached, offered up thoughtlessly and impersonally to the wind. It is pointed, interwoven, thoughtful, and directed to a personal God. Christian gratitude is higher than "feeling good" or "being happy." The apostles and martyrs routinely expressed gratitude to God while in prison, after being scourged, and on their way to the executioner's block or the pyre. This kind of gratitude is not circumstantial, but routine.
+Christian gratitude is not vague and detached, offered up thoughtlessly and impersonally to the wind. It is pointed, interwoven, thoughtful, and directed to a personal God. Christian gratitude is higher than "feeling good" or "being happy." The apostles and martyrs routinely expressed gratitude to God while in prison, after being scourged, and on their way to the executioner's block or the pyre. This kind of gratitude is not circumstantial, but routine. It is not gratitude apart from suffering, but in despite of it.
 
 As you are shaken in circumstances beyond your control, are you "grateful for receiving a kingdom that cannot be shaken"? (Heb. 12). Will you say each day, "Thanks be to God, who gives us the victory through Jesus Christ"? (1 Cor. 15). Do you "count it all joy" when you "meet trials of various kinds"? (Jas. 1). A Christian does.
 
