@@ -15,7 +15,7 @@ I have no idea what color my mother's eyes are.
 
 Familiarity often doesn’t turn us into more attentive people. Sometimes, it’s the things we’re most familiar with that we’re the most blind towards. We get so close to a thing – we can become so accustomed to it – that we neglect to stop and notice the extraordinary it contains. That’s how, after almost three decades of relationship, my mother’s eyes are something I don’t really stop to look at anymore. They’ve become familiar, and thus, forgotten.
 
-I think the same thing is often true of us and God.
+This same familiarity often catches us with God.
 
 Here’s a familiar premise: God speaks through his word. This is Christianity 101, as basic as it gets. But what we might not stop to consider – what we might be too familiar to remember – is that when you or I speak, our words come in a particular tone and tenor. Often, what we’re actually saying is less important than the tone in which we say them. (Imagine all you could learn about a couple you’re observing across a busy restaurant: their body language and verbal tones will tell you a lot even if you can’t hear the words.)
 
