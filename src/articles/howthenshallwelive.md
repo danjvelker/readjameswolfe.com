@@ -17,7 +17,7 @@ Familiarity often doesn’t turn us into more attentive people. Sometimes, it’
 
 This same familiarity often catches us with God.
 
-Here’s a familiar premise: God speaks through his word. This is Christianity 101, as basic as it gets. But what we might not stop to consider – what we might be too familiar to remember – is that when you or I speak, our words come in a particular tone and tenor. Often, what we’re actually saying is less important than the tone in which we say them. (Imagine all you could learn about a couple you’re observing across a busy restaurant: their body language and verbal tones will tell you a lot even if you can’t hear the words.)
+Here’s a familiar premise: God speaks through his word. This is Christianity 101, as basic as it gets. But what we might not stop to consider – what we might be too familiar to remember – is that when you or I speak, our words come in a particular tone and tenor. Often, what we’re actually saying is less important than the tone in which we say them. (Imagine all you could learn about a couple you’re observing across a busy restaurant: you can infer a lot from their body language and verbal tones even if you don't know what they're actually saying.)
 
 But if that’s true, then God’s word must have a tone. And if it does, then we’re left with a question: what should we do about it?
 
