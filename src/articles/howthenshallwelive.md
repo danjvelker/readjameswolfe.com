@@ -41,7 +41,7 @@ Of course, any professing Christian ought to answer *Yes;* or desperately wish t
 
 Here's one modest and practical benchmark you can set for yourself: *What the Bible is concerned with, you should concern yourself with also.* Put another way: to the degree that Scripture addresses a topic or engages in a particular tone, you should recognize that in your own life as well. Put very simply: ***a Christian ought to sound more and more like Scripture as they grow in maturity, adopting its tones and attentive to its topics.***
 
-But what does that actually mean?
+But what does Scripture sound like?
 
 Well, Scripture is melancholy, radiant, melodious, wistful, tender, furious, instructive, gentle, excoriating, blunt, and comforting; it speaks in narrative and as instruction, coming in both poetry and prose, with tones of triumph, lament, correction, praise, adoration, warning, and wonder. It contains multitudes, never leaning too far in one direction, never unbalanced, but able to hold the tension of extreme opposites without contradiction. It is both widely and particularly applicable, sharp and incisive, truthful and wise; but it is often beautiful simply for the sake of beauty, less concerned with application than with worship. It holds all these at once, and stretches in all directions without growing thin.
 
