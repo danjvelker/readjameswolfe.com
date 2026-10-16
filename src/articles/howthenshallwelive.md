@@ -39,7 +39,7 @@ Do you love God enough that you resemble him?
 
 Of course, any professing Christian ought to answer *Yes;* or desperately wish that they had. But how do we practically examine ourselves for this kind of transformation? How do we know that the love of the gospel dwells richly in us? How can we know that we love God the way we want to?
 
-Here's one modest and practical benchmark you can set for yourself: *What the Bible is concerned with, you should concern yourself with also.* Put another way: to the degree that Scripture addresses a topic or engages in a particular tone, you should recognize that in your own life as well. Put very simply: **a Christian ought to sound more and more like Scripture as they grow in maturity, adopting its tones and attentive to its topics.**
+Here's one modest and practical benchmark you can set for yourself: *What the Bible is concerned with, you should concern yourself with also.* Put another way: to the degree that Scripture addresses a topic or engages in a particular tone, you should recognize that in your own life as well. Put very simply: ***a Christian ought to sound more and more like Scripture as they grow in maturity, adopting its tones and attentive to its topics.***
 
 But what does that actually mean?
 
