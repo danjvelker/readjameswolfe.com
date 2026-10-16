@@ -27,13 +27,15 @@ But if that’s true, then God’s word must have a tone. And if it does, then w
 
 :::
 
-Christians should wish for God's word to dwell in us richly. That means a radical, gospel centered transformation should be being made apparent in our lives. But transformation is a kind of Christian shibboleth that gestures vaguely but doesn’t point specifically. Transformation into what? And how does this relate to tone of voice?
+Christians should wish for God's word to dwell in us richly. That means a radical, gospel centered transformation should be being made apparent in our lives. But transformation can be a kind of Christian shibboleth that gestures vaguely but doesn’t point specifically. Transformation into what? And how does this relate to tone of voice?
 
 Well, have you ever observed the myriad little ways you become like your friends? How your speech changes, your clothes, or maybe even your posture? – you might pick up mannerisms or catchphrases they frequent, find yourself adopting the same nicknames for mutual friends, or use vocabulary that is more “them” than “you”. If they’re a very close friend, you might even wear similar brands of clothing, or shoes, or drive the same brand of vehicle, or buy a house in the same neighborhood.
 
 More and more, we become like those people we love. 
 
-And the reverse often works too: you can usually tell who you love most by who you most closely resemble. You resemble what you love. Do you love God enough that you resemble him?
+And the reverse often works too: you can usually tell who you love most by who you most closely resemble. Yes, you resemble what you love. 
+
+Do you love God enough that you resemble him?
 
 Of course, any professing Christian ought to answer *Yes;* or desperately wish that they had. But how do we practically examine ourselves for this kind of transformation? How do we know that the love of the gospel dwells richly in us? How can we know that we love God the way we want to?
 
