@@ -11,13 +11,13 @@ date: 2026-11-28
 author: James Wolfe
 publishToHomepage: true
 ---
-> \    ‘Suddenly Faramir stirred, and he opened his eyes, and he looked on Aragorn who bent over him; and a light of knowledge and love was kindled in his eyes, and he spoke softly. \
->      “My lord, you called me. I come. What does the king command?”\
->      "Walk no more in the shadows, but awake!” said Aragorn. “You are weary. Rest a while, and take food, and be ready when I return.”\
->      “I will, lord,” said Faramir. “For who would lie idle when the king has returned?”’\
+> *‘Suddenly Faramir stirred, and he opened his eyes, and he looked on Aragorn who bent over him; and a light of knowledge and love was kindled in his eyes, and he spoke softly.* \
+> *“My lord, you called me. I come. What does the king command?”*\
+> *"Walk no more in the shadows, but awake!” said Aragorn. “You are weary. Rest a while, and take food, and be ready when I return.”*\
+> *“I will, lord,” said Faramir. “For who would lie idle when the king has returned?”’*\
 > — Lord of the Rings, The Return of the King (Book V: The Houses of Healing)
 
-Do you live what you profess?
+**Do you live what you profess?**
 
 Any Christian would (or should) profess that faith in Jesus Christ is the most important aspect of their life, that all other hopes and goals are as good as worthless when held in comparison to glorifying him. But is that how most of us functionally live?
 
@@ -36,9 +36,9 @@ Do you treat him that way?
 
 I don’t. Often, my prayers are halfhearted, routine, chore-like and dull. My obedience (when it comes) often appeals to the “cosmic slot machine,” who issues rewards in return for good behavior. I do read my Bible each day – for about ten minutes, before I devote hours to mindless entertainment and consumeristic hedonism. I serve in ways that I’m comfortable with, and lie to excuse myself from things that would be mildly uncomfortable. Some friend I am.
 
-Do our churches look like we actually believe in Christ crucified?
+**Do our churches look like we actually believe in Christ crucified?**
 
-I’m not sure. What can you say when your theology is terrific but people are scared to pray in a small group? What do we communicate about Christ and our faith when we treat Christ’s Bride, his holy church, more as a commodity for our benefit than as a beauty to glorify and devote ourselves to? Invincible salvation? Please. We’re scared of sounding dumb in small groups. It feels like most people are uncomfortable to pray, serve, or lead. It feels like everyone is waiting for someone else to step up and do the work. It feels like most of us who claim Christ spend all day unearthing reasons to excuse ourselves from actually… you know, living out what we believe. Busyness, comfort, introversion, sleep schedules, family game nights, “that’s just not what we do.”
+I’m not sure. What can you say when your theology is terrific but people are scared to pray in a small group? What do we communicate about Christ and our faith when we treat Christ’s Bride, his holy church, more as a commodity for our benefit than as a beauty to glorify and devote ourselves to? Invincible salvation? Please. We’re scared of sounding dumb in our small groups. It feels like most people are uncomfortable to pray, serve, or lead. It feels like everyone is waiting for someone else to step up and do the work. It feels like most of us who claim Christ spend all day unearthing reasons to excuse ourselves from actually… you know, living out what we believe. Busyness, comfort, introversion, sleep schedules, family game nights, *“that’s just not what we do.”*
 
 We don’t feel like the people that we could be.
 
@@ -54,7 +54,7 @@ The work is to read, to worship, to build, to serve, to love. The work is to be 
 
 *“Who would lie idle when the king has returned?”*
 
-We are trained to be in Christian spaces far better than we are trained to be Christian people. Many of us think that growing in our faith equals serving more and more until all our capacity is filled and our lives are busy and we’re still stuck in horrible sins and ugly patterns of thought and we don’t actually love Jesus any more and we’re just tired and empty and all our efforts feel meaningless but at least we grew in our faith. Right?
+**We are trained to be in Christian spaces far better than we are trained to be Christian people.** Many of us think that growing in our faith equals serving more and more until all our capacity is filled and our lives are busy and we’re still stuck in horrible sins and ugly patterns of thought and we don’t actually love Jesus any more and we’re just tired and empty and all our efforts feel meaningless but at least we grew in our faith. Right?
 
 A deficient view of Jesus will impoverish your life. A deficient view of Jesus explains both why you find yourself growing in a negative direction (towards sin), and why you feel stunted in your efforts to grow positively (towards holiness). Your understanding of the “good-news” gospel of Christ profoundly shapes your ability to live boldly, fight sin, flee the over-love of comfort, and be transformed.
 
