@@ -11,11 +11,11 @@ date: 2026-11-28
 author: James Wolfe
 publishToHomepage: true
 ---
-> Suddenly Faramir stirred, and he opened his eyes, and he looked on Aragorn who bent over him; and a light of knowledge and love was kindled in his eyes, and he spoke softly. \
-> *“My lord, you called me. I come. What does the king command?”*\
-> *"Walk no more in the shadows, but awake!”* said Aragorn. *“You are weary. Rest a while, and take food, and be ready when I return.”*\
-> *“I will, lord,”* said Faramir. *“For who would lie idle when the king has returned?”*\
-> — Lord of the Rings, The Return of the King (Book V: The Houses of Healing)
+> *Suddenly Faramir stirred, and he opened his eyes, and he looked on Aragorn who bent over him; and a light of knowledge and love was kindled in his eyes, and he spoke softly.* \
+> “My lord, you called me. I come. What does the king command?”\
+> *"Walk no more in the shadows, but awake!” said Aragorn. “You are weary. Rest a while, and take food, and be ready when I return.”*\
+> “I will, lord,” said Faramir. “For who would lie idle when the king has returned?”\
+> *— Lord of the Rings, The Return of the King (Book V: The Houses of Healing)*
 
 **Do you live what you profess?**
 
@@ -38,7 +38,7 @@ I don’t. Often, my prayers are halfhearted, routine, chore-like and dull. My o
 
 **Do our churches look like we actually believe in Christ crucified?**
 
-I’m not sure. What can you say when your theology is terrific but people are scared to pray in a small group? What do we communicate about Christ and our faith when we treat Christ’s Bride, his holy church, more as a commodity for our benefit than as a beauty to glorify and devote ourselves to? Invincible salvation? Please. We’re scared of sounding dumb in our small groups. It feels like most people are uncomfortable to pray, serve, or lead. It feels like everyone is waiting for someone else to step up and do the work. It feels like most of us who claim Christ spend all day unearthing reasons to excuse ourselves from actually… you know, living out what we believe. Busyness, comfort, introversion, sleep schedules, family game nights, *“that’s just not what we do.”*
+I’m not sure. What else can you say when your theology is terrific but people are scared to pray in a small group? What else do we communicate about Christ and our faith when we treat Christ’s Bride, his holy church, more as a commodity for our benefit than as a beauty to glorify and devote ourselves to? Invincible salvation? Please. We’re scared of sounding a little dumb in our small groups. It feels like most people are uncomfortable to pray, serve, or lead. It feels like everyone is waiting for someone else to step up and do the work. It feels like most of us who claim Christ spend all day unearthing reasons to excuse ourselves from actually… y'know, living out what we believe. Busyness, comfort, introversion, sleep schedules, family game nights, *“that’s just not what we do.”*
 
 We don’t feel like the people that we could be.
 
@@ -60,9 +60,9 @@ A deficient view of Jesus will impoverish your life. A deficient view of Jesus e
 
 Note what your gospel understanding doesn’t produce. It doesn't mean that you'll serve in the nursery, or to go on a short-term missions trip, or to post more Bible verses to your Pinterest page. It doesn’t mean that you’ll wear a cross necklace or dress more modestly or never say anything spicier than “gosh darning heck.” **You can have an agonizingly deficient view of Jesus while still performing adequately in most Christian spaces.**
 
-Nothing would give your Enemy more pleasure.
+And nothing would give your Enemy more pleasure.
 
-So give up on yourself! Give away everything you ever wanted, every desire and ambition and idolatry and excuse that competes with Christ. You will never possess more than when you’ve given everything away and have nothing to hold but him. You profess Christ crucified; be crucified with him! You profess yourself a sinner saved only by grace; maybe you should start to act like it.
+So give up on yourself! Give away everything you ever wanted, every desire and ambition and idolatry and excuse that competes with Christ. You will never possess more than when you’ve given everything away and have nothing to hold but him. You profess Christ crucified; be crucified with him! You profess yourself a sinner saved only by unmerited grace; maybe start acting like it.
 
 Will you continue to lie idle when the king has returned? The hour has come for you to wake from sleep. The night is far gone, the day is at hand – so throw back everything you were clinging to and put on Christ!  Seek him boldly in prayer, with your service, with the time you can spare and the time you can’t. Seek him with every muscle in your body and every ounce of tissue in your heart until you ache from your weak, foolish, unadorned love, and all your mind and heart radiate with his presence, and every deepest dream and desire turns to him and him alone, and all the things of this earth fade away and become like dust in your mouth.
 
