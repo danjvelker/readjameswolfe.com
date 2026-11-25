@@ -11,12 +11,11 @@ date: 2026-11-28
 author: James Wolfe
 publishToHomepage: true
 ---
-:::scripture – Lord of the Rings, The Return of the King (Book V: The Houses of Healing)
+:::scripture Lord of the Rings, The Return of the King (Book V: The Houses of Healing)
      ‘Suddenly Faramir stirred, and he opened his eyes, and he looked on Aragorn who bent over him; and a light of knowledge and love was kindled in his eyes, and he spoke softly. 
      “My lord, you called me. I come. What does the king command?”
      "Walk no more in the shadows, but awake!” said Aragorn. “You are weary. Rest a while, and take food, and be ready when I return.”
      “I will, lord,” said Faramir. “For who would lie idle when the king has returned?”’
-
 :::
 
 Do you live what you profess?
