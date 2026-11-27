@@ -32,8 +32,6 @@ We profess Christ crucified. In him, we have an invincible salvation secured by 
 
 Do you treat him that way?
 
-*“Who would lie idle when the king has returned?”*
-
 I don’t. Often, my prayers are halfhearted, routine, chore-like and dull. My obedience (when it comes) often appeals to the “cosmic slot machine,” who issues rewards in return for good behavior. I do read my Bible each day – for about ten minutes, before I devote hours to mindless entertainment and consumeristic hedonism. I serve in ways that I’m comfortable with, and lie to excuse myself from things that would be mildly uncomfortable. Some friend I am.
 
 **Do our churches look like we actually believe in Christ crucified?**
