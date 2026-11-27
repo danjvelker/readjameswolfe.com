@@ -56,7 +56,7 @@ The work is to read, to worship, to build, to serve, to love. The work is to be 
 
 A deficient view of Jesus will impoverish your life. A deficient view of Jesus explains both why you find yourself growing in a negative direction (towards sin), and why you feel stunted in your efforts to grow positively (towards holiness). Your understanding of the “good-news” gospel of Christ profoundly shapes your ability to live boldly, fight sin, flee the over-love of comfort, and be transformed.
 
-Note what your gospel understanding doesn’t produce. It doesn't mean that you'll serve in the nursery, or to go on a short-term missions trip, or to post more Bible verses to your Pinterest page. It doesn’t mean that you’ll wear a cross necklace or dress more modestly or never say anything spicier than “gosh darning heck.” **You can have an agonizingly deficient view of Jesus while still performing adequately in most Christian spaces.**
+Note what your gospel understanding doesn’t produce. It doesn't produce the best nursery worker, or a short-term missions trip, or posting more Bible verses to your Pinterest page. It doesn’t mean that you’ll wear a cross necklace or dress more modestly or never say anything spicier than “gosh darning heck.” **You can have an agonizingly deficient view of Jesus while still performing adequately in most Christian spaces.**
 
 And nothing would give your Enemy more pleasure.
 
